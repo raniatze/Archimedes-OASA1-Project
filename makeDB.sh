@@ -2,6 +2,7 @@
 
 python3 inserter.py -f ake.csv -c ake
 python3 inserter.py -f events.csv -c events
+python3 inserter.py -f dimoi.csv -c dimoi -s ','
 
 
 wget https://catalog.hcapdata.gr/dataset/956ed989-1e5c-4766-8289-a27373071f0f/resource/56634236-37b3-4c20-bda9-98838b2d6f93/download/stops.txt
