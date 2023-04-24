@@ -31,7 +31,7 @@ python3 inserter.py -f stop_times.txt -c stop_times -s ','
 #wget https://catalog.hcapdata.gr/dataset/a7691904-f9a0-4d7e-a6e1-88e24bf0df8a/resource/0763e95f-c9e7-488d-be03-daf31c59b8a5/download/stops_230306.rar
 #unrar x stops_230306.rar
 #python3 kmltocsv.py
-#python3 inserter.py -f staseis_dimoi.csv -c staseis_dimoi  -s ','
+python3 inserter.py -f staseis_dimoi.csv -c staseis_dimoi  -s ','
 
 wget https://catalog.hcapdata.gr/dataset/7deec407-6799-4975-beb2-af983e454e02/resource/2791d19c-a08b-4643-8a45-90a3ad1ec445/download/report1c_vasikodiktyo_dimon_230110.csv
 python3 inserter.py -f report1c_vasikodiktyo_dimon_230110.csv -c grammes_dimoi -s ','
