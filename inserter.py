@@ -19,7 +19,10 @@ db = client['OASA1']
 collection = db[args.collection]
 
 
-with open(args.filename, 'r', encoding='utf-8-sig') as ake:
-    reader = csv.DictReader(ake, delimiter=args.separator)
-    for row in reader:
-        collection.insert_one(row)
+try:
+    with open(args.filename, 'r', encoding='utf-8-sig') as ake:
+        reader = csv.DictReader(ake, delimiter=args.separator)
+        for row in reader:
+                collection.insert_one(row)
+except:
+    print("problmatic row: ", row)
