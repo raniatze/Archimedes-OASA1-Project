@@ -14,7 +14,7 @@ placemarks = root.findall('.//{http://www.opengis.net/kml/2.2}Placemark')
 # Create a CSV file to write the data to
 # Replace the file path below with the path where you want to save the CSV file
 csv_file = 'staseis_dimoi.csv'
-csv_writer = csv.writer(open(csv_file, 'w'))
+csv_writer = csv.writer(open(csv_file, 'w'), delimiter=';')
 
 # Write the header row to the CSV file
 csv_writer.writerow(['stop_id', 'stop_descr', 'stop_desr_matrix', 'stop_street', 'dimos', 'perioxi','stop_code', 'stop_url'])
@@ -27,11 +27,11 @@ for placemark in placemarks:
         for child in extended_data:
             if child.tag.endswith('Data'):
                 try:
-                    data += child.find('{http://www.opengis.net/kml/2.2}value').text + ','
+                    data += child.find('{http://www.opengis.net/kml/2.2}value').text + ';'
                 except:
-                    data += 'NULL,'
+                    data += 'NULL;'
     # Write the data to the CSV file
-    csv_writer.writerow([data.rstrip(',')])
+    csv_writer.writerow([data.rstrip(';')])
 
 with open(csv_file, 'r') as f:
     lines = f.readlines()
@@ -42,5 +42,4 @@ modified_lines.extend([line[1:-2]+'\n' for line in lines[1:]])
 # Write the modified lines back to the file
 with open(csv_file, 'w') as f:
     f.writelines(modified_lines)
-
 
