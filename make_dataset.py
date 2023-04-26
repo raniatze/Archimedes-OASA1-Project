@@ -9,35 +9,6 @@ client = pymongo.MongoClient('mongodb://localhost:27017/')
 
 # Choose the database to work with
 db = client['OASA1']
-
-def historical_weather_data(timestamp, latitude, longitude):
-
-  # Open Meteo API endpoint and parameters
-  url = "https://archive-api.open-meteo.com/v1/archive?"
-
-  # Construct API request parameters
-  params = {
-      "latitude": latitude,
-      "longitude": longitude,
-      "start_date": timestamp.date(),
-      "end_date": timestamp.date(),
-      "timezone": "Europe/Athens",
-      "hourly": ["temperature_2m","precipitation"]
-  }
-
-  # Make API request
-  response = requests.get(url, params=params)
-
-  # Check if request was successful
-  if response.status_code == 200:
-      # Extract weather information from response JSON
-      data = response.json()
-      temperature_data = data["hourly"]["temperature_2m"]
-      precipitation_data = data["hourly"]["precipitation"]
-      return temperature_data[timestamp.hour], precipitation_data[timestamp.hour]
-  else:
-      print(f"Error retrieving weather information: {response.status_code} {response.reason}")
-      return
       
 def main():
     with open('ake.csv', 'r') as input_file, open('ake_updated.csv', 'w') as output_file:
@@ -61,13 +32,10 @@ def main():
        for doc in result:
          route_id = doc["route_id"]
 
-       # Find municipality geolocation for the stop_id
+       # Find municipality of the stop_id
        result = db.staseis_dimoi.find({"stop_id": stop_id}, {"dimos": 1})
        for doc in result:
          dimos = doc["dimos"]
-       result = db.dimoi.find({'municipality_name': dimos},{'municipality_latitude': 1, 'municipality_longitude': 1})
-       for doc in result:
-         municipality_lat, municipality_lon = doc["municipality_latitude"], doc["municipality_longitude"]
        
        if arrival_datetime != '':
          # Convert to datetime object
@@ -88,9 +56,12 @@ def main():
          # Get historical weather data
 	 # Round up or down to the closest hour	
          rounded_time = (dt_object + timedelta(minutes=30)).replace(minute=0, second=0, microsecond=0)
-         temperature, precipitation = historical_weather_data(rounded_time, municipality_lat, municipality_lon)
-         
+         result = db.weather.find({"municipality": dimos, "timestamp": str(rounded_time)}, {"temperature": 1, "precipitation": 1})
+         for doc in result:
+          temperature, precipitation = doc["temperature"], doc["precipitation"]
+ 
          csv_writer.writerow([route_id, rtype, stop_id, stop_order, minute_of_day, day_of_month, day_of_week, week_of_year, day_of_year, is_holiday, temperature, precipitation, t_pa_in_veh])
+       
        else:
          continue
        	#result = db.stop_times.find_one({"trip_id": trip_id, "stop_id": stop_id})
