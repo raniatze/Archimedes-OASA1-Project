@@ -3,8 +3,6 @@ import csv
 from datetime import datetime
 import json
 
-start_of_2017 = datetime(2017, 1, 1, 0, 0, 0)
-march_of_2023 = datetime(2023, 3, 1, 0, 0, 0)
 
 def get_data(lat, long):
 
@@ -13,9 +11,8 @@ def get_data(lat, long):
     params = {
             "latitude": lat,
             "longitude": long,
-            "start_date": '2017-01-01',
-            #"end_date": '2017-01-01',
-            "end_date": '2023-03-01',
+            "start_date": '2021-04-01',
+            "end_date": '2023-04-26',
             "timezone": "Europe/Athens",
             "hourly": ["temperature_2m", "precipitation"]
             }
