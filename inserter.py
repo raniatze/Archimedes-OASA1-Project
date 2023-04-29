@@ -20,9 +20,13 @@ collection = db[args.collection]
 
 
 try:
+    data = []
     with open(args.filename, 'r', encoding='utf-8-sig') as ake:
         reader = csv.DictReader(ake, delimiter=args.separator)
         for row in reader:
-                collection.insert_one(row)
+            data.append(row)
+            #collection.insert_one(row)
+        collection.insert_many(data)
 except:
-    print("problmatic row: ", row)
+    #print("problmatic row: ", row, ' file: ', args.filename)
+    print('problmatic row at', 'file: ', args.filename)
