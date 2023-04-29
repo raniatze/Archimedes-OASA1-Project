@@ -11,9 +11,7 @@ client = pymongo.MongoClient('mongodb://localhost:27017/')
 db = client['OASA1']
 collection = db["ake"]
 
-      
 def main():
-    cnt = 0
     cursor = collection.find()
     for row in cursor:
       
@@ -30,7 +28,6 @@ def main():
       result = db.staseis_dimoi.find({"stop_id": stop_id}, {"dimos": 1})
       for doc in result:
         dimos = doc["dimos"]
-       
       
       # Convert to arrival_datetime to datetime object
       dt_object = datetime.strptime(arrival_datetime, "%Y-%m-%d %H:%M:%S")
