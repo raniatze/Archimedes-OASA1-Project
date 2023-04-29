@@ -18,7 +18,7 @@ def add_line_to_file(file_path, line):
 def process_files(directory):
     txt_files = find_txt_files(directory)
     for file in txt_files:
-        subprocess.run(['python3', './inserter.py', '-f', file, '-c', 'ake', '-s', ','])
+        subprocess.run(['python3', './inserter.py', '-f', file, '-c', 'ake', '-s', ';'])
 
         
 if __name__ == '__main__':
