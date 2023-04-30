@@ -1,8 +1,9 @@
 # Input:  .csv file from ONE day (ake_data.csv)
+# Output: ake_updated.csv file for that day
+
 import csv
 import pymongo
 import holidays
-#import datetime
 import pandas as pd
 from datetime import datetime, timedelta
 
