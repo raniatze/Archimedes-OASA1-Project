@@ -2,8 +2,7 @@
 
 #python3 inserter.py -f ake.csv -c ake
 python3 addHeaders.py
-python3 insertAKE.py
-
+python3 make_dataset.py
 
 python3 inserter.py -f events.csv -c events
 python3 inserter.py -f dimoi.csv -c dimoi -s ','
