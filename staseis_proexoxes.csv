@@ -1,0 +1,392 @@
+stop_id;stop_descr;stop_street;stop_url;stop_code
+010005;ΚΡΗΤΗΣ;ΠΑΛΑΙΩΝ ΠΟΛΕΜΙΣΤΩΝ;http://telematics.oasa.gr/#stationInfo_10005;10005
+010054;ΣΤΕΦ. ΣΑΡΑΦΗ;ΣΤΕΦ.ΣΑΡΑΦΗ;http://telematics.oasa.gr/#stationInfo_10054;10054
+010056;ΓΕΦΥΡΑ;ΣΤΕΦ.ΣΑΡΑΦΗ;http://telematics.oasa.gr/#stationInfo_10056;10056
+010058;ΑΣΤΥΝΟΜΙΑ;ΣΤΕΦ.ΣΑΡΑΦΗ;http://telematics.oasa.gr/#stationInfo_10058;10058
+010062;ΛΥΚΟΥΡΓΟΥ;ΛΥΚΟΥΡΓΟΥ;http://telematics.oasa.gr/#stationInfo_10062;10062
+000120;ΑΓ. ΔΗΜΗΤΡΙΟΣ (ΣΤ.  ΔΑΦΝΗ);0;http://telematics.oasa.gr/#stationInfo_10324;10324
+061198;ΝΟΣΟΚΟΜΕΙΟ ΕΛΠΙΔΑ;ΔΗΜΗΤΣΑΝΑΣ;http://telematics.oasa.gr/#stationInfo_10524;10524
+400514;ΖΩΟΔΟΧΟΣ ΠΗΓΗ;0;http://telematics.oasa.gr/#stationInfo_10779;10779
+260191;ΠΑΙΔΙΚΗ ΧΑΡΑ;ΧΡΥΣΟΣΤΟΜΟΥ ΣΜΥΡΝΗΣ;http://telematics.oasa.gr/#stationInfo_11034;11034
+260192;ΛΥΚΟΥΡΓΟΥ;ΧΡΥΣΟΣΤΟΜΟΥ ΣΜΥΡΝΗΣ;http://telematics.oasa.gr/#stationInfo_11035;11035
+070161;ΤΕΙ ΑΘΗΝΩΝ;ΕΔΕΣΣΗΣ;http://telematics.oasa.gr/#stationInfo_11124;11124
+030027;5η ΑΓ.ΠΑΡΑΣΚΕΥΗΣ;ΠΕΛΟΠΟΝΝΗΣΟΥ;http://telematics.oasa.gr/#stationInfo_30027;30027
+030039;9η ΑΓ.ΠΑΡΑΣΚΕΥΗΣ;ΑΝΘ\ΓΟΥ ΤΑΣΣΟΠΟΥΛΟΥ;http://telematics.oasa.gr/#stationInfo_30039;30039
+040019;ΣΧΟΛΕΙΟ;ΛΕΩΦ.ΑΓ.ΔΗΜΗΤΡΙΟΥ;http://telematics.oasa.gr/#stationInfo_40019;40019
+040040;ΑΝΤΙΟΠΗΣ;ΛΕΩΦ.ΑΓ.ΔΗΜΗΤΡΙΟΥ;http://telematics.oasa.gr/#stationInfo_40040;40040
+040054;ΜΑΚΡΥΓΙΑΝΝΗ;ΑΛ.ΑΣΗΜΑΚΟΠΟΥΛΟΥ;http://telematics.oasa.gr/#stationInfo_40054;40054
+040055;ΠΑΠΑΔΗΜΑ;ΑΛ.ΑΣΗΜΑΚΟΠΟΥΛΟΥ;http://telematics.oasa.gr/#stationInfo_40055;40055
+040064;3η ΠΑΠΑΓΟΥ;ΣΤΡ\ΧΟΥ ΑΛΕΞ.ΠΑΠΑΓΟΥ;http://telematics.oasa.gr/#stationInfo_40064;40064
+040067;ΝΕΚΡ. ΚΑΛΛΙΘΕΑΣ;ΑΓ.ΘΕΟΔΩΡΩΝ;http://telematics.oasa.gr/#stationInfo_40067;40067
+040078;3η ΑΣΥΡΜΑΤΟΥ;ΑΣΥΡΜΑΤΟΥ;http://telematics.oasa.gr/#stationInfo_40078;40078
+040082;6η ΑΓ. ΒΑΡΒΑΡΑΣ;ΑΓ.ΒΑΡΒΑΡΑΣ;http://telematics.oasa.gr/#stationInfo_40082;40082
+040095;4η ΠΑΠΑΓΟΥ;ΣΤΡ\ΧΟΥ ΑΛΕΞ.ΠΑΠΑΓΟΥ;http://telematics.oasa.gr/#stationInfo_40095;40095
+041106;ΛΥΣΑΝΔΡΟΥ;ΛΕΩΦ.ΑΓ.ΔΗΜΗΤΡΙΟΥ;http://telematics.oasa.gr/#stationInfo_41106;41106
+050014;ΣΧΟΛΕΙΟ;ΣΥΡΟΥ;http://telematics.oasa.gr/#stationInfo_50014;50014
+050020;9η;ΓΕΩΡΓ.ΠΑΠΑΝΔΡΕΟΥ;http://telematics.oasa.gr/#stationInfo_50020;50020
+050073;ΜΥΚΟΝΙΑΤΙΚΑ;ΝΙΚ.ΠΛΑΣΤΗΡΑ;http://telematics.oasa.gr/#stationInfo_50073;50073
+060017;ΑΓ. ΕΛΕΥΘΕΡΙΟΣ;ΜΟΜΦΕΡΑΤΟΥ;http://telematics.oasa.gr/#stationInfo_60017;60017
+060018;ΜΟΜΦΕΡΑΤΟΥ;ΜΟΜΦΕΡΑΤΟΥ;http://telematics.oasa.gr/#stationInfo_60018;60018
+060033;ΠΟΛΥΤΕΧΝΕΙΟ;ΜΠΟΥΜΠΟΥΛΙΝΑΣ;http://telematics.oasa.gr/#stationInfo_60033;60033
+060034;ΑΓ. ΒΑΣΙΛΕΙΟΣ;ΜΠΟΥΜΠΟΥΛΙΝΑΣ;http://telematics.oasa.gr/#stationInfo_60034;60034
+060038;1η ΒΑΛΤΙΝΩΝ;ΒΑΛΤΙΝΩΝ;http://telematics.oasa.gr/#stationInfo_60038;60038
+060039;2η ΒΑΛΤΙΝΩΝ;ΒΑΛΤΙΝΩΝ;http://telematics.oasa.gr/#stationInfo_60039;60039
+060040;ΓΕΝΝΑΔΙΟΥ;ΓΕΝΝΑΔΙΟΥ;http://telematics.oasa.gr/#stationInfo_60040;60040
+060041;ΜΠΟΥΚΟΥΒΑΛΑ;ΜΟΜΦΕΡΑΤΟΥ;http://telematics.oasa.gr/#stationInfo_60041;60041
+060046;ΠΑΛΑΙΟ ΤΕΡΜΑ;ΠΑΝΟΡΜΟΥ;http://telematics.oasa.gr/#stationInfo_60046;60046
+060049;ΠΑΛΑΙΟ ΤΕΡΜΑ;ΠΑΝΟΡΜΟΥ;http://telematics.oasa.gr/#stationInfo_60049;60049
+060050;ΑΓ. ΔΗΜΗΤΡΙΟΣ;ΠΑΝΟΡΜΟΥ;http://telematics.oasa.gr/#stationInfo_60050;60050
+060055;ΑΓ. ΕΛΕΥΘΕΡΙΟΣ;ΡΑΓΚΑΒΗ;http://telematics.oasa.gr/#stationInfo_60055;60055
+060056;ΒΑΛΤΙΝΩΝ;ΒΑΛΤΙΝΩΝ;http://telematics.oasa.gr/#stationInfo_60056;60056
+060088;ΝΑΥΤΙΚΟ;ΔΕΙΝΟΚΡΑΤΟΥΣ;http://telematics.oasa.gr/#stationInfo_60088;60088
+060100;11η ΛΥΚΑΒΗΤΤΟΣ;ΑΡΜΑΤΩΛΩΝ ΚΑΙ ΚΛΕΦΤΩΝ;http://telematics.oasa.gr/#stationInfo_60100;60100
+060103;ΔΟΡΥΛΑΙΟΥ;ΓΕΛΩΝΟΣ;http://telematics.oasa.gr/#stationInfo_60103;60103
+060104;ΝΑΥΤΙΚΟ;ΔΕΙΝΟΚΡΑΤΟΥΣ;http://telematics.oasa.gr/#stationInfo_60104;60104
+060139;ΖΑΧΑΡΟΠΛΑΣΤΕΙΟ;ΚΟΥΡΤΙΔΟΥ;http://telematics.oasa.gr/#stationInfo_60139;60139
+060157;ΣΙΔΕΡΑ;ΣΕΠΟΛΙΩΝ;http://telematics.oasa.gr/#stationInfo_60157;60157
+060165;ΑΓ. ΜΕΛΕΤΙΟΣ;ΒΟΡ.ΗΠΕΙΡΟΥ;http://telematics.oasa.gr/#stationInfo_60165;60165
+060176;ΙΚΑ ΠΑΤΗΣΙΩΝ;ΔΡΟΣΟΠΟΥΛΟΥ;http://telematics.oasa.gr/#stationInfo_60176;60176
+060186;ΠΝΕΥΜΑΤΙΚΟ ΚΕΝΤΡΟ;ΚΡΕΟΝΤΟΣ;http://telematics.oasa.gr/#stationInfo_60186;60186
+060220;ΑΛΑΜΑΝΑΣ;ΠΑΛΑΜΗΔΙΟΥ;http://telematics.oasa.gr/#stationInfo_60220;60220
+060329;ΚΟΖΑΝΗΣ;ΚΟΖΑΝΗΣ;http://telematics.oasa.gr/#stationInfo_60329;60329
+060339;ΑΓ. ΜΑΡΚΕΛΑ;ΣΠΥΡΟΥ ΠΑΤΣΗ;http://telematics.oasa.gr/#stationInfo_60339;60339
+060356;ΑΜΑΞΟΣΤΑΣΙΟ ΒΟΤΑΝΙΚΟΥ;ΑΓ.ΠΟΛΥΚΑΡΠΟΥ;http://telematics.oasa.gr/#stationInfo_60356;60356
+060358;ΠΛΑΤΑΙΩΝ;ΜΕΓ.ΑΛΕΞΑΝΔΡΟΥ;http://telematics.oasa.gr/#stationInfo_60358;60358
+060359;ΛΕΩΝΙΔΟΥ;ΘΕΡΜΟΠΥΛΩΝ;http://telematics.oasa.gr/#stationInfo_60359;60359
+060363;ΜΥΛΛΕΡΟΥ;ΜΕΓ.ΑΛΕΞΑΝΔΡΟΥ;http://telematics.oasa.gr/#stationInfo_60363;60363
+060372;ΙΔΡ.ΜΕΛ.ΜΕΡΚΟΥΡΗ;ΠΕΡΣΕΦΟΝΗΣ;http://telematics.oasa.gr/#stationInfo_60372;60372
+060378;ΜΥΡΜΙΔΟΝΩΝ;ΤΡΙΩΝ ΙΕΡΑΡΧΩΝ;http://telematics.oasa.gr/#stationInfo_60378;60378
+060379;ΓΕΦΥΡΑ;ΤΡΙΩΝ ΙΕΡΑΡΧΩΝ;http://telematics.oasa.gr/#stationInfo_60379;60379
+060381;ΦΑΡΜΑΚΕΙΟ;ΤΡΙΩΝ ΙΕΡΑΡΧΩΝ;http://telematics.oasa.gr/#stationInfo_60381;60381
+060395;ΤΑΧΥΔΡΟΜΕΙΟ;ΚΕΙΡΙΑΔΩΝ;http://telematics.oasa.gr/#stationInfo_60395;60395
+060398;ΣΤ.ΗΣΑΠ ΠΕΤΡΑΛΩΝΩΝ;ΚΕΙΡΙΑΔΩΝ;http://telematics.oasa.gr/#stationInfo_60398;60398
+060399;ΑΘΗΝΑΔΩΡΟΥ;ΚΕΙΡΙΑΔΩΝ;http://telematics.oasa.gr/#stationInfo_60399;60399
+060400;ΓΕΦΥΡΕΣ;ΚΕΙΡΙΑΔΩΝ;http://telematics.oasa.gr/#stationInfo_60400;60400
+060427;ΠΛ. ΒΙΚΤΩΡΙΑΣ;3ηs ΣΕΠΤΕΜΒΡΙΟΥ;http://telematics.oasa.gr/#stationInfo_60427;60427
+060428;ΑΓΓΕΛΟΠΟΥΛΟΥ;3ηs ΣΕΠΤΕΜΒΡΙΟΥ;http://telematics.oasa.gr/#stationInfo_60428;60428
+060431;ΚΑΛΛΙΦΡΟΝΑ;ΔΡΟΣΟΠΟΥΛΟΥ;http://telematics.oasa.gr/#stationInfo_60431;60431
+060437;ΣΧΟΛΕΙΑ ΓΚΡΑΒΑΣ;ΤΑΥΓΕΤΟΥ;http://telematics.oasa.gr/#stationInfo_60437;60437
+060444;ΑΣΤΥΝΟΜΙΑ;ΧΑΛΕΠΑ;http://telematics.oasa.gr/#stationInfo_60444;60444
+060447;ΣΥΡΑΚΟΥΣΩΝ;ΣΥΡΑΚΟΥΣΩΝ;http://telematics.oasa.gr/#stationInfo_60447;60447
+060449;ΠΛΑΤΕΙΑ;ΣΥΡΑΚΟΥΣΩΝ;http://telematics.oasa.gr/#stationInfo_60449;60449
+060452;ΧΑΛΕΠΑ;ΧΑΛΕΠΑ;http://telematics.oasa.gr/#stationInfo_60452;60452
+060453;ΑΣΤΥΝΟΜΙΑ;ΧΑΛΕΠΑ;http://telematics.oasa.gr/#stationInfo_60453;60453
+060455;ΓΑΛΑΤΣΙΟΥ;ΑΓ.ΛΑΥΡΑΣ;http://telematics.oasa.gr/#stationInfo_60455;60455
+060478;ΛΥΣΙΑΤΡΕΙΟ;ΔΡΟΣΟΠΟΥΛΟΥ;http://telematics.oasa.gr/#stationInfo_60478;60478
+060479;ΚΟΛΙΑΤΣΟΥ;ΔΡΟΣΟΠΟΥΛΟΥ;http://telematics.oasa.gr/#stationInfo_60479;60479
+060480;ΑΓ. ΛΟΥΚΑΣ;ΔΡΟΣΟΠΟΥΛΟΥ;http://telematics.oasa.gr/#stationInfo_60480;60480
+060534;ΠΑΛ.ΤΕΡΜΑ;ΒΕΛΒΕΝΔΟΥΣ;http://telematics.oasa.gr/#stationInfo_60534;60534
+060541;ΓΥΜΝΑΣΙΟ;ΒΕΛΒΕΝΔΟΥΣ;http://telematics.oasa.gr/#stationInfo_60541;60541
+060542;ΠΑΛ. ΤΕΡΜΑ;ΚΕΡΚΥΡΑΣ;http://telematics.oasa.gr/#stationInfo_60542;60542
+060543;ΦΙΛΟΤΙΜΟΥ;ΚΕΡΚΥΡΑΣ;http://telematics.oasa.gr/#stationInfo_60543;60543
+060544;ΣΚΥΡΟΥ;ΚΕΡΚΥΡΑΣ;http://telematics.oasa.gr/#stationInfo_60544;60544
+060545;ΖΑΚΥΝΘΟΥ;ΚΕΡΚΥΡΑΣ;http://telematics.oasa.gr/#stationInfo_60545;60545
+060572;ΒΟΥΡΗ;ΕΥΣΤΑΘ.ΛΑΜΨΑ;http://telematics.oasa.gr/#stationInfo_60572;60572
+060625;ΔΙΚΑΣΤΗΡΙΑ;ΕΥΕΛΠΙΔΩΝ;http://telematics.oasa.gr/#stationInfo_60625;60625
+060639;1η ΕΛ. ΒΕΝΙΖΕΛΟΥ;ΚΩΝ.ΤΣΑΛΔΑΡΗ;http://telematics.oasa.gr/#stationInfo_60639;60639
+060641;ΚΡΥΣΤΑΛ;ΠΡΙΓΚΙΠΟΝΝΗΣΩΝ;http://telematics.oasa.gr/#stationInfo_60641;60641
+060677;ΓΑΛΑΞΙΑΣ;ΜΕΣΟΓΕΙΩΝ;http://telematics.oasa.gr/#stationInfo_60677;60677
+060705;ΝΟΣΟΚ. ΠΑΙΔΩΝ;ΘΗΒΩΝ;http://telematics.oasa.gr/#stationInfo_60705;60705
+060706;ΝΟΣΟΚΟΜΕΙΟ ΠΑΙΔΩΝ;ΘΗΒΩΝ;http://telematics.oasa.gr/#stationInfo_60706;60706
+060709;ΛΑΙΚΟ;ΜΙΚΡΑΣ ΑΣΙΑΣ;http://telematics.oasa.gr/#stationInfo_60709;60709
+060710;ΟΤΕ;ΜΙΚΡΑΣ ΑΣΙΑΣ;http://telematics.oasa.gr/#stationInfo_60710;60710
+060711;ΑΛΕΞ;ΜΙΚΡΑΣ ΑΣΙΑΣ;http://telematics.oasa.gr/#stationInfo_60711;60711
+060727;ΠΛ. ΠΛΑΣΤΗΡΑ;ΑΡΧΙΜΗΔΟΥΣ;http://telematics.oasa.gr/#stationInfo_60727;60727
+060730;ΑΡΥΒΒΟΥ;ΑΡΥΒΒΟΥ;http://telematics.oasa.gr/#stationInfo_60730;60730
+060732;ΓΕΦΥΡΑ;ΧΡΕΜΩΝΙΔΟΥ;http://telematics.oasa.gr/#stationInfo_60732;60732
+060735;ΕΜΠΕΔΟΚΛΕΟΥΣ;ΕΜΠΕΔΟΚΛΕΟΥΣ;http://telematics.oasa.gr/#stationInfo_60735;60735
+060737;ΠΛ. ΠΛΑΣΤΗΡΑ;ΕΥΤΥΧΙΔΟΥ;http://telematics.oasa.gr/#stationInfo_60737;60737
+060738;ΠΛ. ΠΛΑΣΤΗΡΑ;ΕΥΤΥΧΙΔΟΥ;http://telematics.oasa.gr/#stationInfo_60738;60738
+060741;ΦΙΛΟΛΑΟΥ;ΦΡΥΝΗΣ;http://telematics.oasa.gr/#stationInfo_60741;60741
+060742;ΙΦΙΚΡΑΤΟΥΣ;ΙΦΙΚΡΑΤΟΥΣ;http://telematics.oasa.gr/#stationInfo_60742;60742
+060744;ΑΛΣΟΣ;ΕΥΤΥΧΙΔΟΥ;http://telematics.oasa.gr/#stationInfo_60744;60744
+060750;ΡΙΖΑΡΗ;ΡΙΖΑΡΗ;http://telematics.oasa.gr/#stationInfo_60750;60750
+060751;ΓΥΜΝΑΣΙΟ;ΣΠΥΡ.ΜΕΡΚΟΥΡΗ;http://telematics.oasa.gr/#stationInfo_60751;60751
+060752;ΑΛΣΟΣ;ΣΠΥΡ.ΜΕΡΚΟΥΡΗ;http://telematics.oasa.gr/#stationInfo_60752;60752
+060753;ΑΛΣΟΣ;ΣΠΥΡ.ΜΕΡΚΟΥΡΗ;http://telematics.oasa.gr/#stationInfo_60753;60753
+060754;ΓΥΜΝΑΣΙΟ;ΣΠΥΡ.ΜΕΡΚΟΥΡΗ;http://telematics.oasa.gr/#stationInfo_60754;60754
+060755;ΒΡΥΣΑΚΙ;ΦΟΡΜΙΩΝΟΣ;http://telematics.oasa.gr/#stationInfo_60755;60755
+060756;ΒΡΥΣΑΚΙ;ΕΥΦΡΟΝΙΟΥ;http://telematics.oasa.gr/#stationInfo_60756;60756
+060757;ΕΥΦΡΟΝΙΟΥ;ΕΥΦΡΟΝΙΟΥ;http://telematics.oasa.gr/#stationInfo_60757;60757
+060758;2η ΡΙΖΑΡΗ;ΡΙΖΑΡΗ;http://telematics.oasa.gr/#stationInfo_60758;60758
+060762;ΚΑΡΑΒΕΛ;ΒΑΣ.ΑΛΕΞΑΝΔΡΟΥ;http://telematics.oasa.gr/#stationInfo_60762;60762
+060763;ΝΟΣΟΚ. ΣΥΓΓΡΟΥ;ΒΑΣ.ΑΛΕΞΑΝΔΡΟΥ;http://telematics.oasa.gr/#stationInfo_60763;60763
+060764;ΧΙΛΤΟΝ;ΒΑΣ.ΑΛΕΞΑΝΔΡΟΥ;http://telematics.oasa.gr/#stationInfo_60764;60764
+060845;ΑΓ. ΑΡΤΕΜΙΟΣ;ΦΙΛΟΛΑΟΥ;http://telematics.oasa.gr/#stationInfo_60845;60845
+060850;ΔΑΜΑΡΕΩΣ;ΔΑΜΑΓΗΤΟΥ;http://telematics.oasa.gr/#stationInfo_60850;60850
+060878;ΛΥΣΣΙΑΤΡΕΙΟ;ΠΑΤΗΣΙΩΝ;http://telematics.oasa.gr/#stationInfo_60878;60878
+060886;ΕΥΕΛΠΙΔΩΝ;ΒΑΛΤΙΝΩΝ;http://telematics.oasa.gr/#stationInfo_60886;60886
+060887;ΑΓ.  ΧΑΡΑΛΑΜΠΟΣ;ΒΑΛΤΙΝΩΝ;http://telematics.oasa.gr/#stationInfo_60887;60887
+060888;ΕΜΠΕΔΟΚΛΕΟΥΣ;ΕΜΠΕΔΟΚΛΕΟΥΣ;http://telematics.oasa.gr/#stationInfo_60888;60888
+060893;ΗΠΕΙΡΟΥ;ΑΧΑΡΝΩΝ;http://telematics.oasa.gr/#stationInfo_60893;60893
+060894;ΧΕΥΔΕΝ;ΑΧΑΡΝΩΝ;http://telematics.oasa.gr/#stationInfo_60894;60894
+060895;ΑΓ. ΠΑΝΤΕΛΕΗΜΩΝ;ΑΧΑΡΝΩΝ;http://telematics.oasa.gr/#stationInfo_60895;60895
+060896;ΙΘΑΚΗΣ;ΑΧΑΡΝΩΝ;http://telematics.oasa.gr/#stationInfo_60896;60896
+060897;ΑΓ. ΜΕΛΕΤΙΟΥ;ΑΧΑΡΝΩΝ;http://telematics.oasa.gr/#stationInfo_60897;60897
+060898;ΣΠΙΤΙ ΤΟΥ ΗΘΟΠΟΙΟΥ;ΑΧΑΡΝΩΝ;http://telematics.oasa.gr/#stationInfo_60898;60898
+060900;ΑΓ. ΝΙΚΟΛΑΟΣ;ΑΧΑΡΝΩΝ;http://telematics.oasa.gr/#stationInfo_60900;60900
+060909;ΑΓ. ΕΛΕΥΘΕΡΙΟΣ;ΑΧΑΡΝΩΝ;http://telematics.oasa.gr/#stationInfo_60909;60909
+060910;ΠΑΠΑΝΤΩΝΙΟΥ;ΑΧΑΡΝΩΝ;http://telematics.oasa.gr/#stationInfo_60910;60910
+060914;ΑΓ. ΝΙΚΟΛΑΟΣ;ΑΧΑΡΝΩΝ;http://telematics.oasa.gr/#stationInfo_60914;60914
+060915;ΠΑΡΑΔΕΙΣΟΣ;ΑΧΑΡΝΩΝ;http://telematics.oasa.gr/#stationInfo_60915;60915
+060916;ΣΠΙΤΙ ΤΟΥ ΗΘΟΠΟΙΟΥ;ΑΧΑΡΝΩΝ;http://telematics.oasa.gr/#stationInfo_60916;60916
+060917;ΑΓ .ΜΕΛΕΤΙΟΥ;ΑΧΑΡΝΩΝ;http://telematics.oasa.gr/#stationInfo_60917;60917
+060918;ΙΘΑΚΗΣ;ΑΧΑΡΝΩΝ;http://telematics.oasa.gr/#stationInfo_60918;60918
+060920;ΧΕΥΔΕΝ;ΑΧΑΡΝΩΝ;http://telematics.oasa.gr/#stationInfo_60920;60920
+060921;ΙΟΥΛΙΑΝΟΥ;ΑΧΑΡΝΩΝ;http://telematics.oasa.gr/#stationInfo_60921;60921
+060924;1η ΙΛΙΣΙΩΝ;ΝΥΜΦΑΙΩΝ;http://telematics.oasa.gr/#stationInfo_60924;60924
+060936;ΠΟΣΕΙΔΩΝΑΣ;ΦΟΡΜΙΩΝΟΣ;http://telematics.oasa.gr/#stationInfo_60936;60936
+060939;ΕΥΡΥΔΑΜΑΝΤΟΣ;ΕΥΡΥΔΑΜΑΝΤΟΣ;http://telematics.oasa.gr/#stationInfo_60939;60939
+060941;2η ΜΠΑΚΝΑΝΑ;ΜΠΑΚΝΑΝΑ;http://telematics.oasa.gr/#stationInfo_60941;60941
+060949;3η ΑΙΓΑΙΟΥ;ΚΡΑΤΗΤΟΣ;http://telematics.oasa.gr/#stationInfo_60949;60949
+060950;2η ΑΙΓΑΙΟΥ;ΚΡΑΤΗΤΟΣ;http://telematics.oasa.gr/#stationInfo_60950;60950
+060952;ΠΑΡΝΗΘΟΣ;ΠΑΡΝΗΘΟΣ;http://telematics.oasa.gr/#stationInfo_60952;60952
+060953;ΦΑΕΘΩΝΤΟΣ;ΔΑΦΝΙΔΟΣ;http://telematics.oasa.gr/#stationInfo_60953;60953
+060954;ΠΥΘΩΝΟΣ;ΔΑΦΝΙΔΟΣ;http://telematics.oasa.gr/#stationInfo_60954;60954
+060955;ΑΓ.ΔΗΜΗΤΡΙΟΣ;ΣΤΡ\ΓΟΥ ΚΑΛΛΑΡΗ;http://telematics.oasa.gr/#stationInfo_60955;60955
+060962;ΚΥΘΝΟΥ;ΚΥΘΝΟΥ;http://telematics.oasa.gr/#stationInfo_60962;60962
+060978;ΜΠΟΥΚΟΥΒΑΛΑ;ΡΑΓΚΑΒΗ;http://telematics.oasa.gr/#stationInfo_60978;60978
+061026;2η ΣΧΟΛΕΙΟ;ΕΥΦΡΟΝΙΟΥ;http://telematics.oasa.gr/#stationInfo_61026;61026
+061060;ΚΛΩΝΑΡΙΔΟΥ;ΠΑΤΗΣΙΩΝ;http://telematics.oasa.gr/#stationInfo_61060;61060
+061061;ΑΓ. ΛΟΥΚΑΣ;ΠΑΤΗΣΙΩΝ;http://telematics.oasa.gr/#stationInfo_61061;61061
+061071;ΦΑΕΘΩΝΤΟΣ;ΦΑΙΔΡΙΑΔΩΝ;http://telematics.oasa.gr/#stationInfo_61071;61071
+061076;ΖΙΝΝΗ;ΒΕΙΚΟΥ;http://telematics.oasa.gr/#stationInfo_61076;61076
+061077;ΚΟΥΚΑΚΙ;ΒΕΙΚΟΥ;http://telematics.oasa.gr/#stationInfo_61077;61077
+061088;KOYKAKI;ΔΗΜΗΤΡΑΚΟΠΟΥΛΟΥ;http://telematics.oasa.gr/#stationInfo_61088;61088
+061096;ΠΛ.ΠΑΓΚΡΑΤΙΟΥ;ΦΡΥΝΗΣ;http://telematics.oasa.gr/#stationInfo_61096;61096
+061098;ΠΑΓΚΡΑΤΙ;ΕΥΤΥΧΙΔΟΥ;http://telematics.oasa.gr/#stationInfo_61098;61098
+061100;ΠΡΟΦ.ΗΛΙΑΣ;ΕΥΦΡΑΝΟΡΟΣ;http://telematics.oasa.gr/#stationInfo_61100;61100
+061104;ΑΡΥΒΒΟΥ;ΦΙΛΟΛΑΟΥ;http://telematics.oasa.gr/#stationInfo_61104;61104
+061105;ΥΜΗΤΤΟΥ;ΑΛΚΕΤΟΥ;http://telematics.oasa.gr/#stationInfo_61105;61105
+061120;ΓΕΦΥΡΕΣ;ΗΟΥΣ;http://telematics.oasa.gr/#stationInfo_61120;61120
+061121;ΑΡΙΣΤΟΒΟΥΛΟΥ;ΗΟΥΣ;http://telematics.oasa.gr/#stationInfo_61121;61121
+061122;ΑΓ. ΑΙΚΑΤΕΡΙΝΗ;ΗΟΥΣ;http://telematics.oasa.gr/#stationInfo_61122;61122
+061123;ΜΠΡΑΒΟ;ΗΟΥΣ;http://telematics.oasa.gr/#stationInfo_61123;61123
+061127;ΠΑΙΔΙΚΗ ΧΑΡΑ;ΔΗΜΗΤΡΑΚΟΠΟΥΛΟΥ;http://telematics.oasa.gr/#stationInfo_61127;61127
+061132;ΓΕΩΡΓΟΥΛΙΑ;ΣΙΒΟΡΩΝ;http://telematics.oasa.gr/#stationInfo_61132;61132
+061136;ΚΟΝΩΝΟΣ;ΥΜΗΤΤΟΥ;http://telematics.oasa.gr/#stationInfo_61136;61136
+061139;ΠΥΡΡΑΣ;ΠΥΡΡΑΣ;http://telematics.oasa.gr/#stationInfo_61139;61139
+061151;1η ΡΙΖΑΡΗ;ΡΙΖΑΡΗ;http://telematics.oasa.gr/#stationInfo_61151;61151
+061159;ΑΝΔΡΕΑΔΟΥ;ΒΙΚΕΛΑ;http://telematics.oasa.gr/#stationInfo_61159;61159
+061163;ΑΓ. ΣΠΥΡΙΔΩΝ;ΕΡΑΤΟΣΘΕΝΟΥΣ;http://telematics.oasa.gr/#stationInfo_61163;61163
+061183;ΠΑΛΑΙΟ ΤΕΡΜΑ;ΠΡΙΓΚΙΠΟΝΝΗΣΩΝ;http://telematics.oasa.gr/#stationInfo_61183;61183
+061196;ΣΧΟΛΕΙΑ;ΚΟΥΡΤΙΔΟΥ;http://telematics.oasa.gr/#stationInfo_61196;61196
+061225;ΤΑΥΓΕΤΟΥ;ΚΕΑΣ;http://telematics.oasa.gr/#stationInfo_61225;61225
+061313;ΠΛ.ΠΑΓΚΡΑΤΙΟΥ;ΥΜΗΤΤΟΥ;http://telematics.oasa.gr/#stationInfo_61313;61313
+061319;ΣΤ. ΠΑΝΟΡΜΟΥ;ΠΑΝΟΡΜΟΥ;http://telematics.oasa.gr/#stationInfo_61319;61319
+061345;ΙΚΑ;ΑΛΚΜΗΝΗΣ;http://telematics.oasa.gr/#stationInfo_61345;61345
+061592;ΠΟΛΥΤΕΧΝΕΙΟ;ΣΤΟΥΡΝΑΡΗ;http://telematics.oasa.gr/#stationInfo_61592;61592
+061606;ΠΑΡΚΟ ΕΥΕΛΠΙΔΩΝ;ΕΥΕΛΠΙΔΩΝ;http://telematics.oasa.gr/#stationInfo_61606;61606
+070015;ΑΓ. ΓΕΩΡΓΙΟΣ;ΙΕΡΑΣ ΟΔΟΥ;http://telematics.oasa.gr/#stationInfo_70015;70015
+070075;ΜΠΟΤΣΑΡΗ;ΑΛ.ΠΑΠΑΝΑΣΤΑΣΙΟΥ;http://telematics.oasa.gr/#stationInfo_70075;70075
+070076;ΑΛΑΤΣΑΤΩΝ;ΑΛ.ΠΑΠΑΝΑΣΤΑΣΙΟΥ;http://telematics.oasa.gr/#stationInfo_70076;70076
+070088;ΑΓ.ΓΕΩΡΓΙΟΣ;ΠΡΟΥΣΣΗΣ;http://telematics.oasa.gr/#stationInfo_70088;70088
+070138;ΠΛΑΣΤΗΡΑ;ΝΙΚ.ΠΛΑΣΤΗΡΑ;http://telematics.oasa.gr/#stationInfo_70138;70138
+090075;ΕΜΠ. ΚΕΝΤΡΟ;ΑΓ.ΚΩΝΣΤΑΝΤΙΝΟΥ;http://telematics.oasa.gr/#stationInfo_90075;90075
+090167;INTERAMERICAN;ΑΓ.ΚΩΝΣΤΑΝΤΙΝΟΥ;http://telematics.oasa.gr/#stationInfo_90167;90167
+100181;ΠΑΝΟΡΑΜΑ;ΔΙΑΝΘΟΥ(ΜΟΡΝΟΥ);http://telematics.oasa.gr/#stationInfo_100181;100181
+100186;ΚΑΡΑΙΣΚΑΚΗ;ΔΙΑΝΘΟΥ(ΜΟΡΝΟΥ);http://telematics.oasa.gr/#stationInfo_100186;100186
+110036;4η ΑΡΓΥΡΟΥΠΟΛΕΩΣ;ΓΕΡΟΥΛΑΝΟΥ;http://telematics.oasa.gr/#stationInfo_110036;110036
+110045;ΠΛ. ΗΡΩΩΝ ΠΟΛΥΤΕΧΝΕΙΟΥ;ΓΕΡΟΥΛΑΝΟΥ;http://telematics.oasa.gr/#stationInfo_110045;110045
+110055;ΦΑΡΜΑΚΕΙΟ;ΓΕΩΓ.ΠΑΠΑΝΔΡΕΟΥ;http://telematics.oasa.gr/#stationInfo_110055;110055
+120031;ΟΤΕ;ΛΕΩΦ.ΔΗΜΟΚΡΑΤΙΑΣ;http://telematics.oasa.gr/#stationInfo_120031;120031
+130028;4η ΠΑΡΝΗΘΟΣ;ΠΑΡΝΗΘΟΣ;http://telematics.oasa.gr/#stationInfo_130028;130028
+130081;10η ΘΡΑΚΟΜΑΚΕΔΟΝΩΝ;ΘΡΑΚΟΜΑΚΕΔΟΝΩΝ;http://telematics.oasa.gr/#stationInfo_130081;130081
+140003;ΑΓΟΡΑ ΒΥΡΩΝΑ;ΛΕΩΦ.ΚΥΠΡΟΥ;http://telematics.oasa.gr/#stationInfo_140003;140003
+140006;ΙΚΑ;ΚΑΡΑΟΛΗ ΚΑΙ ΔΗΜΗΤΡΙΟΥ;http://telematics.oasa.gr/#stationInfo_140006;140006
+140025;ΔΗΜΑΡΧΕΙΟ;ΛΕΩΦ.ΧΡ.ΣΜΥΡΝΗΣ;http://telematics.oasa.gr/#stationInfo_140025;140025
+140026;ΝΕΟ ΠΑΓΚΡΑΤΙ;ΝΙΚ.ΝΙΚΗΦΟΡΙΔΗ;http://telematics.oasa.gr/#stationInfo_140026;140026
+140030;ΦΟΥΡΝΟΣ;ΚΟΛΟΚΟΤΡΩΝΗ;http://telematics.oasa.gr/#stationInfo_140030;140030
+140046;ΒΟΥΤΖΑ;ΝΕΑΣ ΕΛΒΕΤΙΑΣ;http://telematics.oasa.gr/#stationInfo_140046;140046
+140047;ΠΑΛΑΙΟ ΤΕΡΜΑ;ΤΜΩΛΟΥ;http://telematics.oasa.gr/#stationInfo_140047;140047
+140068;ΒΟΥΤΖΑ;ΒΟΥΤΖΑ;http://telematics.oasa.gr/#stationInfo_140068;140068
+140071;ΠΛ.ΣΜΥΡΝΗΣ;ΠΛ.ΣΜΥΡΝΗΣ;http://telematics.oasa.gr/#stationInfo_140071;140071
+160002;ΤΡΑΠΕΖΑ;ΓΡ.ΛΑΜΠΡΑΚΗ;http://telematics.oasa.gr/#stationInfo_160002;160002
+160242;ΣΧΟΛΕΙΟ;ΑΓ.ΝΕΚΤΑΡΙΟΥ;http://telematics.oasa.gr/#stationInfo_160242;160242
+160243;ΣΧΟΛΕΙΟ;ΑΓ.ΝΕΚΤΑΡΙΟΥ;http://telematics.oasa.gr/#stationInfo_160243;160243
+160321;ΤΑΤΑΚΗ;ΓΡ.ΛΑΜΠΡΑΚΗ;http://telematics.oasa.gr/#stationInfo_160321;160321
+160363;ΠΡΙΓΚΙΠΟΝΝΗΣΩΝ;ΑΓ.ΝΕΚΤΑΡΙΟΥ;http://telematics.oasa.gr/#stationInfo_160363;160363
+160364;ΠΡΙΓΚΙΠΟΝΝΗΣΩΝ;ΑΓ.ΝΕΚΤΑΡΙΟΥ;http://telematics.oasa.gr/#stationInfo_160364;160364
+170051;ΠΑΠΑΝΑΣΤΑΣΙΟΥ;ΛΕΩΦ.ΠΑΠΑΝΑΣΤΑΣΙΟΥ;http://telematics.oasa.gr/#stationInfo_170051;170051
+180032;ΑΝΑΛΗΨΕΩΣ;ΚΩΣΤΗ ΠΑΛΑΜΑ;http://telematics.oasa.gr/#stationInfo_180032;180032
+180048;ΦΑΡΜΑΚΕΙΟ;ΡΗΓΑ ΦΕΡΑΙΟΥ;http://telematics.oasa.gr/#stationInfo_180048;180048
+200001;ΕΥΔΑΠ;ΙΛΙΣΙΩΝ;http://telematics.oasa.gr/#stationInfo_200001;200001
+200004;ΑΝΟΙΞΗ;ΛΕΩΦ.ΣΤΡ\ΧΟΥ ΠΑΠΑΓΟΥ;http://telematics.oasa.gr/#stationInfo_200004;200004
+200005;ΚΟΤΟΠΟΥΛΗ;ΛΕΩΦ.ΣΤΡ\ΧΟΥ ΠΑΠΑΓΟΥ;http://telematics.oasa.gr/#stationInfo_200005;200005
+200006;ΤΣΙΤΟΥΡΑ;ΛΕΩΦ.ΣΤΡ\ΧΟΥ ΠΑΠΑΓΟΥ;http://telematics.oasa.gr/#stationInfo_200006;200006
+200010;9η ΖΩΓΡΑΦΟΥ;ΚΟΥΣΙΔΟΥ;http://telematics.oasa.gr/#stationInfo_200010;200010
+200011;10η ΖΩΓΡΑΦΟΥ;ΚΟΥΣΙΔΟΥ;http://telematics.oasa.gr/#stationInfo_200011;200011
+200013;10η ΖΩΓΡΑΦΟΥ;ΗΡΩΩΝ ΠΟΛΥΤΕΧΝΕΙΟΥ;http://telematics.oasa.gr/#stationInfo_200013;200013
+200014;9η ΖΩΓΡΑΦΟΥ;ΗΡΩΩΝ ΠΟΛΥΤΕΧΝΕΙΟΥ;http://telematics.oasa.gr/#stationInfo_200014;200014
+200018;ΤΣΙΤΟΥΡΑ;ΛΕΩΦ.ΣΤΡ\ΧΟΥ ΠΑΠΑΓΟΥ;http://telematics.oasa.gr/#stationInfo_200018;200018
+200020;ΙΚΑ;ΛΕΩΦ.ΣΤΡ\ΧΟΥ ΠΑΠΑΓΟΥ;http://telematics.oasa.gr/#stationInfo_200020;200020
+200029;ΙΚΑ;ΠΑΠΑΔΙΑΜΑΝΤΟΠΟΥΛΟΥ;http://telematics.oasa.gr/#stationInfo_200029;200029
+200030;ΓΙΑΝΝΟΠΟΥΛΟΥ;ΠΑΠΑΔΙΑΜΑΝΤΟΠΟΥΛΟΥ;http://telematics.oasa.gr/#stationInfo_200030;200030
+200031;ΑΓ.ΘΩΜΑΣ;ΠΑΠΑΔΙΑΜΑΝΤΟΠΟΥΛΟΥ;http://telematics.oasa.gr/#stationInfo_200031;200031
+200038;2η ΙΛΙΣΙΩΝ;ΛΕΩΦ.ΓΡΗΓ.ΑΥΞΕΝΤΙΟΥ;http://telematics.oasa.gr/#stationInfo_200038;200038
+200040;4η ΙΛΙΣΙΩΝ;ΛΕΩΦ.ΓΡΗΓ.ΑΥΞΕΝΤΙΟΥ;http://telematics.oasa.gr/#stationInfo_200040;200040
+200042;6η ΙΛΙΣΙΩΝ;ΜΟΥΣΚΟΥ;http://telematics.oasa.gr/#stationInfo_200042;200042
+200043;7η ΙΛΙΣΙΩΝ;ΕΘΝ.ΑΝΤΙΣΤΑΣΕΩΣ;http://telematics.oasa.gr/#stationInfo_200043;200043
+200048;4η ΙΛΙΣΙΩΝ;ΛΕΩΦ.ΓΡΗΓ.ΑΥΞΕΝΤΙΟΥ;http://telematics.oasa.gr/#stationInfo_200048;200048
+200050;2η ΙΛΙΣΙΩΝ;ΛΕΩΦ.ΓΡΗΓ.ΑΥΞΕΝΤΙΟΥ;http://telematics.oasa.gr/#stationInfo_200050;200050
+200052;ΑΛΕΞ;ΠΑΠΑΔΙΑΜΑΝΤΟΠΟΥΛΟΥ;http://telematics.oasa.gr/#stationInfo_200052;200052
+200058;3η ΙΛΙΣΙΩΝ;ΛΕΩΦ.ΓΡΗΓ.ΑΥΞΕΝΤΙΟΥ;http://telematics.oasa.gr/#stationInfo_200058;200058
+200059;3η ΙΛΙΣΙΩΝ;ΛΕΩΦ.ΓΡΗΓ.ΑΥΞΕΝΤΙΟΥ;http://telematics.oasa.gr/#stationInfo_200059;200059
+200065;2η ΖΩΓΡΑΦΟΥ;ΛΕΩΦ.ΣΤΡ\ΧΟΥ ΠΑΠΑΓΟΥ;http://telematics.oasa.gr/#stationInfo_200065;200065
+200066;ΙΚΑ;ΛΕΩ. ΓΕΩΡ.ΠΑΠΑΝΔΡΕΟΥ;http://telematics.oasa.gr/#stationInfo_200066;200066
+200073;ΥΠΕΡΑΓΟΡΑ;ΟΥΛΩΦ ΠΑΛΜΕ;http://telematics.oasa.gr/#stationInfo_200073;200073
+200086;ΛΑΙΚΟ ΝΟΣΟΚΟΜΕΙΟ;ΛΕΩΦ.ΓΕΩΡ.ΠΑΠΑΝΔΡΕΟΥ;http://telematics.oasa.gr/#stationInfo_200086;200086
+210022;ΠΑΠΑΓΟΥ;ΑΛ.ΠΑΝΑΓΟΥΛΗ;http://telematics.oasa.gr/#stationInfo_210022;210022
+210026;ΓΙΩΡΓΟΥ;ΔΗΜΟΚΡΑΤΙΑΣ;http://telematics.oasa.gr/#stationInfo_210026;210026
+230008;ΦΑΡΜΑΚΕΙΟ;ΕΘΝΙΚΗΣ ΑΝΤΙΣΤΑΣΕΩΣ;http://telematics.oasa.gr/#stationInfo_230008;230008
+230009;ΠΑΝΑΓΙΤΣΑ;ΕΘΝΙΚΗΣ ΑΝΤΙΣΤΑΣΕΩΣ;http://telematics.oasa.gr/#stationInfo_230009;230009
+230011;9η ΚΑΙΣΑΡΙΑΝΗΣ;ΕΘΝΙΚΗΣ ΑΝΤΙΣΤΑΣΗΣ;http://telematics.oasa.gr/#stationInfo_230011;230011
+230012;10η ΚΑΙΣΑΡΙΑΝΗΣ;ΕΘΝΙΚΗΣ ΑΝΤΙΣΤΑΣΗΣ;http://telematics.oasa.gr/#stationInfo_230012;230012
+230016;11η ΚΑΙΣΑΡΙΑΝΗΣ;ΕΘΝΙΚΗΣ ΑΝΤΙΣΤΑΣΕΩΣ;http://telematics.oasa.gr/#stationInfo_230016;230016
+230017;10η ΚΑΙΣΑΡΙΑΝΗΣ;ΕΘΝΙΚΗΣ ΑΝΤΙΣΤΑΣΗΣ;http://telematics.oasa.gr/#stationInfo_230017;230017
+230018;9η ΚΑΙΣΑΡΙΑΝΗΣ;ΕΘΝΙΚΗΣ ΑΝΤΙΣΤΑΣΗΣ;http://telematics.oasa.gr/#stationInfo_230018;230018
+230019;8η ΚΑΙΣΑΡΙΑΝΗΣ;ΕΘΝΙΚΗΣ ΑΝΤΙΣΤΑΣΗΣ;http://telematics.oasa.gr/#stationInfo_230019;230019
+230020;ΠΑΝΑΓΙΤΣΑ;ΕΘΝΙΚΗΣ ΑΝΤΙΣΤΑΣΗΣ;http://telematics.oasa.gr/#stationInfo_230020;230020
+230021;ΦΑΡΜΑΚΕΙΟ;ΕΘΝΙΚΗΣ ΑΝΤΙΣΤΑΣΗΣ;http://telematics.oasa.gr/#stationInfo_230021;230021
+230025;2η ΣΧΟΛΕΙΟ;ΕΥΦΡΟΝΙΟΥ;http://telematics.oasa.gr/#stationInfo_230025;230025
+230031;ΔΗΜΑΡΧΕΙΟ;ΕΘΝΙΚΗΣ ΑΝΤΙΣΤΑΣΗΣ;http://telematics.oasa.gr/#stationInfo_230031;230031
+230035;ΑΓ. ΝΙΚΟΛΑΟΣ;ΥΜΗΤΤΟΥ;http://telematics.oasa.gr/#stationInfo_230035;230035
+230036;ΠΑΛ. ΤΕΡΜΑ;ΕΘΝΙΚΗΣ ΑΝΤΙΣΤΑΣΗΣ;http://telematics.oasa.gr/#stationInfo_230036;230036
+240028;ΑΓ.ΠΑΝΤΩΝ;ΔΗΜΟΣΘΕΝΟΥΣ;http://telematics.oasa.gr/#stationInfo_240028;240028
+240029;ΔΗΜΗΤΡΑΚΟΠΟΥΛΟΥ;ΔΗΜΟΣΘΕΝΟΥΣ;http://telematics.oasa.gr/#stationInfo_240029;240029
+240030;ΔΑΒΑΚΗ;ΔΗΜΟΣΘΕΝΟΥΣ;http://telematics.oasa.gr/#stationInfo_240030;240030
+240031;ΣΚΡΑ;ΔΗΜΟΣΘΕΝΟΥΣ;http://telematics.oasa.gr/#stationInfo_240031;240031
+240032;ΣΠΑΡΤΗΣ;ΔΗΜΟΣΘΕΝΟΥΣ;http://telematics.oasa.gr/#stationInfo_240032;240032
+240033;9η ΚΑΛΛΙΘΕΑΣ;ΔΗΜΟΣΘΕΝΟΥΣ;http://telematics.oasa.gr/#stationInfo_240033;240033
+240042;10η ΚΑΛΛΙΘΕΑΣ;ΔΗΜΟΣΘΕΝΟΥΣ;http://telematics.oasa.gr/#stationInfo_240042;240042
+240043;9η ΚΑΛΛΙΘΕΑΣ;ΔΗΜΟΣΘΕΝΟΥΣ;http://telematics.oasa.gr/#stationInfo_240043;240043
+240044;ΣΠΑΡΤΗ;ΔΗΜΟΣΘΕΝΟΥΣ;http://telematics.oasa.gr/#stationInfo_240044;240044
+240045;ΣΚΡΑ;ΔΗΜΟΣΘΕΝΟΥΣ;http://telematics.oasa.gr/#stationInfo_240045;240045
+240046;ΔΑΒΑΚΗ;ΔΗΜΟΣΘΕΝΟΥΣ;http://telematics.oasa.gr/#stationInfo_240046;240046
+240047;ΔΗΜΗΤΡΑΚΟΠΟΥΛΟΥ;ΔΗΜΟΣΘΕΝΟΥΣ;http://telematics.oasa.gr/#stationInfo_240047;240047
+240048;ΑΓ.ΠΑΝΤΩΝ;ΔΗΜΟΣΘΕΝΟΥΣ;http://telematics.oasa.gr/#stationInfo_240048;240048
+240050;ΚΑΡΑΓΙΑΝΝΗ;ΕΛ.ΒΕΝΙΖΕΛΟΥ;http://telematics.oasa.gr/#stationInfo_240050;240050
+240051;ΔΗΜΟΤΙΚΟΥ ΣΤΑΔΙΟΥ;ΕΛ.ΒΕΝΙΖΕΛΟΥ;http://telematics.oasa.gr/#stationInfo_240051;240051
+240054;1η ΧΑΡΟΚΟΠΟΥ;ΧΑΡΟΚΟΠΟΥ;http://telematics.oasa.gr/#stationInfo_240054;240054
+240062;ΠΛ. ΔΑΒΑΚΗ;ΔΑΒΑΚΗ;http://telematics.oasa.gr/#stationInfo_240062;240062
+240064;ΙΚΑ;ΔΑΒΑΚΗ;http://telematics.oasa.gr/#stationInfo_240064;240064
+240065;ΙΚΑ;ΔΑΒΑΚΗ;http://telematics.oasa.gr/#stationInfo_240065;240065
+240067;ΔΕΗ;ΔΑΒΑΚΗ;http://telematics.oasa.gr/#stationInfo_240067;240067
+240068;ΠΛ. ΔΑΒΑΚΗ;ΔΑΒΑΚΗ;http://telematics.oasa.gr/#stationInfo_240068;240068
+240072;ΑΘΗΝΑΣ;ΔΟΙΡΑΝΗΣ;http://telematics.oasa.gr/#stationInfo_240072;240072
+240074;ΦΑΡΟΣ ΤΥΦΛΩΝ;ΑΘΗΝΑΣ;http://telematics.oasa.gr/#stationInfo_240074;240074
+240078;ΔΗΜΟΤΙΚΟΥ ΣΤΑΔΙΟΥ;ΕΛ.ΒΕΝΙΖΕΛΟΥ;http://telematics.oasa.gr/#stationInfo_240078;240078
+240079;ΚΑΡΑΓΙΑΝΝΗ;ΕΛ.ΒΕΝΙΖΕΛΟΥ;http://telematics.oasa.gr/#stationInfo_240079;240079
+240080;ΧΑΡΟΚΟΠΟΥ;ΕΛ.ΒΕΝΙΖΕΛΟΥ;http://telematics.oasa.gr/#stationInfo_240080;240080
+240082;ΔΗΜΗΤΡΑΚΟΠΟΥΛΟΥ;ΕΛ.ΒΕΝΙΖΕΛΟΥ;http://telematics.oasa.gr/#stationInfo_240082;240082
+240083;ΚΑΛΛΙΘΕΑ;ΕΛ.ΒΕΝΙΖΕΛΟΥ;http://telematics.oasa.gr/#stationInfo_240083;240083
+240086;Κ.Ε.Α.Τ. ΠΡ. ΟΙΚΟΣ ΤΥΦΛΩΝ;ΕΛ.ΒΕΝΙΖΕΛΟΥ;http://telematics.oasa.gr/#stationInfo_240086;240086
+240087;ΑΓ. ΕΛΕΟΥΣΑ;ΕΛ.ΒΕΝΙΖΕΛΟΥ;http://telematics.oasa.gr/#stationInfo_240087;240087
+240088;ΠΥΡΟΣΒΕΣΤΙΚΗ;ΕΛ.ΒΕΝΙΖΕΛΟΥ;http://telematics.oasa.gr/#stationInfo_240088;240088
+240090;ΤΖΙΤΖΙΦΙΕΣ;ΕΛ.ΒΕΝΙΖΕΛΟΥ;http://telematics.oasa.gr/#stationInfo_240090;240090
+240091;ΠΕΙΣΙΣΤΡΑΤΟΥ;ΕΛ.ΒΕΝΙΖΕΛΟΥ;http://telematics.oasa.gr/#stationInfo_240091;240091
+240093;ΠΥΡΟΣΒΕΣΤΙΚΗ;ΕΛ.ΒΕΝΙΖΕΛΟΥ;http://telematics.oasa.gr/#stationInfo_240093;240093
+240094;ΑΓ. ΕΛΕΟΥΣΑ;ΕΛ.ΒΕΝΙΖΕΛΟΥ;http://telematics.oasa.gr/#stationInfo_240094;240094
+240095;Κ.Ε.Α.Τ. ΠΡ. ΟΙΚΟΣ ΤΥΦΛΩΝ;ΕΛ.ΒΕΝΙΖΕΛΟΥ;http://telematics.oasa.gr/#stationInfo_240095;240095
+240096;ΣΚΡΑ;ΕΛ.ΒΕΝΙΖΕΛΟΥ;http://telematics.oasa.gr/#stationInfo_240096;240096
+240097;ΠΛ. ΔΑΒΑΚΗ;ΕΛ.ΒΕΝΙΖΕΛΟΥ;http://telematics.oasa.gr/#stationInfo_240097;240097
+240098;ΚΑΛΛΙΘΕΑ;ΕΛ.ΒΕΝΙΖΕΛΟΥ;http://telematics.oasa.gr/#stationInfo_240098;240098
+240099;ΑΓ. ΠΑΝΤΕΣ;ΕΛ.ΒΕΝΙΖΕΛΟΥ;http://telematics.oasa.gr/#stationInfo_240099;240099
+240100;ΧΑΡΟΚΟΠΟΥ;ΕΛ.ΒΕΝΙΖΕΛΟΥ;http://telematics.oasa.gr/#stationInfo_240100;240100
+240104;2η ΧΑΡΟΚΟΠΟΥ;ΧΑΡΟΚΟΠΟΥ;http://telematics.oasa.gr/#stationInfo_240104;240104
+240113;ΑΓ. ΠΑΝΤΩΝ;ΑΓ.ΠΑΝΤΩΝ;http://telematics.oasa.gr/#stationInfo_240113;240113
+240114;2η ΑΓ. ΠΑΝΤΩΝ;ΑΓ.ΠΑΝΤΩΝ;http://telematics.oasa.gr/#stationInfo_240114;240114
+240115;1η ΧΑΡΟΚΟΠΟΥ;ΑΓ.ΠΑΝΤΩΝ;http://telematics.oasa.gr/#stationInfo_240115;240115
+240121;ΑΤΘΙΔΩΝ;ΔΗΜΟΣΘΕΝΟΥΣ;http://telematics.oasa.gr/#stationInfo_240121;240121
+260060;ΚΟΠΗ;ΠΛΑΤΩΝΟΣ;http://telematics.oasa.gr/#stationInfo_260060;260060
+260064;ΚΟΥΝΤΟΥΡΙΩΤΟΥ;ΧΡ.ΣΜΥΡΝΗΣ;http://telematics.oasa.gr/#stationInfo_260064;260064
+260066;ΒΥΡΩΝΟΣ;ΔΩΔΕΚΑΝΗΣΟΥ;http://telematics.oasa.gr/#stationInfo_260066;260066
+260140;ΠΡΟΥΣΣΗΣ;ΔΩΔΕΚΑΝΗΣΟΥ;http://telematics.oasa.gr/#stationInfo_260140;260140
+280014;Μ.ΑΣΙΑΣ;ΗΠΕΙΡΟΥ;http://telematics.oasa.gr/#stationInfo_280014;280014
+280032;ΟΡΙΩΝ;ΣΑΜΟΥ;http://telematics.oasa.gr/#stationInfo_280032;280032
+280074;ΠΑΠΑΚΥΡΙΑΖΗ;ΑΘΗΝΑΣ;http://telematics.oasa.gr/#stationInfo_280074;280074
+280075;ΤΣΑΛΔΑΡΗ;ΑΘΗΝΑΣ;http://telematics.oasa.gr/#stationInfo_280075;280075
+280094;ΚΑΠΗ;ΗΠΕΙΡΟΥ;http://telematics.oasa.gr/#stationInfo_280094;280094
+320003;Λ.ΚΑΤΣΩΝΗ;ΧΡ.ΣΜΥΡΝΗΣ;http://telematics.oasa.gr/#stationInfo_320003;320003
+320017;ΑΓ.ΣΩΤΗΡΑΣ;ΜΑΚΡΥΓΙΑΝΝΗ;http://telematics.oasa.gr/#stationInfo_320017;320017
+320018;ΤΡΑΠΕΖΑ;ΜΑΚΡΥΓΙΑΝΝΗ;http://telematics.oasa.gr/#stationInfo_320018;320018
+320050;ΛΑΜΠΡΟΥ ΚΑΤΣΩΝΗ;ΜΑΚΡΥΓΙΑΝΝΗ;http://telematics.oasa.gr/#stationInfo_320050;320050
+320051;ΜΑΚΡΥΓΙΑΝΝΗ;ΜΑΚΡΥΓΙΑΝΝΗ;http://telematics.oasa.gr/#stationInfo_320051;320051
+340001;ΣΤΡΟΦΗ Ν.ΣΜΥΡΝΗΣ;ΧΡ.ΣΜΥΡΝΗΣ;http://telematics.oasa.gr/#stationInfo_340001;340001
+340017;ΘΡΑΚΗΣ;ΑΓ.ΦΩΤΕΙΝΗΣ;http://telematics.oasa.gr/#stationInfo_340017;340017
+340041;ΝΕΚΡ.ΦΑΛΗΡΟΥ;ΑΓ.ΣΟΦΙΑΣ;http://telematics.oasa.gr/#stationInfo_340041;340041
+370026;ΚΡΑΤΙΚΟ ΝΟΣΟΚΟΜΕΙΟ;Π.ΡΑΛΛΗ;http://telematics.oasa.gr/#stationInfo_370026;370026
+370077;ΠΕΡΙΒΟΛΑΚΙ;17ης ΜΑΡΤΙΟΥ 1944;http://telematics.oasa.gr/#stationInfo_370077;370077
+370078;ΑΓ.ΙΩΑΝΝΗΣ;17ης ΜΑΡΤΙΟΥ 1944;http://telematics.oasa.gr/#stationInfo_370078;370078
+380019;ΠΕΥΚΑ;ΠΕΝΤΕΛΗΣ;http://telematics.oasa.gr/#stationInfo_380019;380019
+380029;ΤΕΡΨΙΧΟΡΗΣ;ΑΦΡΟΔΙΤΗΣ;http://telematics.oasa.gr/#stationInfo_380029;380029
+380031;ΑΙΑΝΤΟΣ;ΑΦΡΟΔΙΤΗΣ;http://telematics.oasa.gr/#stationInfo_380031;380031
+380125;ΟΤΕ ΠΑΛ.ΦΑΛΗΡΟΥ;ΝΑΙΑΔΩΝ;http://telematics.oasa.gr/#stationInfo_380125;380125
+400012;ΣΩΡΑ;ΘΕΟΤΟΚΗ;http://telematics.oasa.gr/#stationInfo_400012;400012
+400119;ΦΑΡΜΑΚΕΙΟ;ΚΛΕΙΣΟΒΗΣ;http://telematics.oasa.gr/#stationInfo_400119;400119
+400122;ΤΑΧΥΔΡΟΜΕΙΟ;ΑΓ. ΠΑΡΑΣΚΕΥΗΣ;http://telematics.oasa.gr/#stationInfo_400122;400122
+400125;ΠΑΛ. ΤΕΡΜΑ;ΣΑΧΤΟΥΡΗ;http://telematics.oasa.gr/#stationInfo_400125;400125
+400127;ΠΑΛ. ΤΕΡΜΑ;ΣΑΧΤΟΥΡΗ;http://telematics.oasa.gr/#stationInfo_400127;400127
+400152;ΣΙΔΕΡΑ;ΣΑΛΑΜΙΝΟΣ;http://telematics.oasa.gr/#stationInfo_400152;400152
+400182;ΑΓ.  ΔΗΜΗΤΡΙΟΣ;ΑΓΧΙΑΛΟΥ;http://telematics.oasa.gr/#stationInfo_400182;400182
+400183;ΔΕΡΒΕΝΑΚΙΩΝ;ΑΓΧΙΑΛΟΥ;http://telematics.oasa.gr/#stationInfo_400183;400183
+400308;ΥΠΑΠΑΝΤΗΣ;ΑΓΧΙΑΛΟΥ;http://telematics.oasa.gr/#stationInfo_400308;400308
+400405;ΛΙΜΗΝ ΖΕΑΣ;ΑΚΤΗ ΜΟΥΤΣΟΠΟΥΛΟΥ;http://telematics.oasa.gr/#stationInfo_400405;400405
+400406;ΣΥΡΑΓΓΕΙΟΥ;ΑΚΤΗ ΜΟΥΤΣΟΠΟΥΛΟΥ;http://telematics.oasa.gr/#stationInfo_400406;400406
+400407;ΣΑΝΤΑΡΟΖΑ;ΑΚΤΗ ΜΟΥΤΣΟΠΟΥΛΟΥ;http://telematics.oasa.gr/#stationInfo_400407;400407
+400430;ΛΙΜΗΝ ΖΕΑΣ;ΑΚΤΗ ΜΟΥΤΣΟΠΟΥΛΟΥ;http://telematics.oasa.gr/#stationInfo_400430;400430
+400445;ΑΦΕΝΤΟΥΛΗ;ΑΦΕΝΤΟΥΛΗ;http://telematics.oasa.gr/#stationInfo_400445;400445
+400446;ΤΖΑΝΕΙΟ;ΖΑΝΝΗ;http://telematics.oasa.gr/#stationInfo_400446;400446
+400504;ΠΛ. ΤΕΡΨΙΘΕΑΣ;2ΑΣ ΜΕΡΑΡΧΙΑΣ;http://telematics.oasa.gr/#stationInfo_400504;400504
+410041;Τ.Ε.Ε;ΛΕΩΦ.ΔΗΜΟΚΡΑΤΙΑΣ;http://telematics.oasa.gr/#stationInfo_410041;410041
+420054;1η ΧΡΥΣΟΥΠΟΛΕΩΣ;ΙΩΑΝΝΙΝΩΝ;http://telematics.oasa.gr/#stationInfo_420054;420054
+420070;ΔΩΔΕΚΑΝΗΣΟΥ;ΔΩΔΕΚΑΝΗΣΟΥ;http://telematics.oasa.gr/#stationInfo_420070;420070
+420088;ΙΚΑ;ΒΑΣ.ΑΛΕΞΑΝΔΡΟΥ;http://telematics.oasa.gr/#stationInfo_420088;420088
+420101;ΕΚΑΤΟΔΕΝΔΡΑ;ΠΕΛΑΣΓΙΑΣ;http://telematics.oasa.gr/#stationInfo_420101;420101
+420102;ΙΚΑ;ΒΑΣ.ΑΛΕΞΑΝΔΡΟΥ;http://telematics.oasa.gr/#stationInfo_420102;420102
+420146;ΧΑΝΤΖΙΝΑ;ΠΑΛ.ΚΑΒΑΛΑΣ;http://telematics.oasa.gr/#stationInfo_420146;420146
+420147;ΦΟΥΡΝΟΣ;ΠΑΛ.ΚΑΒΑΛΑΣ;http://telematics.oasa.gr/#stationInfo_420147;420147
+420152;ΧΑΝΤΖΙΝΑ;ΠΑΛ.ΚΑΒΑΛΑΣ;http://telematics.oasa.gr/#stationInfo_420152;420152
+420153;ΑΝΑΓΝΩΣΤΑΡΑ;ΦΙΛΙΚΩΝ;http://telematics.oasa.gr/#stationInfo_420153;420153
+420155;ΑΛΕΞΑΝΔΡΑΣ;ΤΖΩΝ ΚΕΝΝΕΝΤΥ;http://telematics.oasa.gr/#stationInfo_420155;420155
+420156;ΓΥΜΝΑΣΙΟ;ΤΖΩΝ ΚΕΝΝΕΝΤΥ;http://telematics.oasa.gr/#stationInfo_420156;420156
+420166;ΑΓ. ΚΗΡΥΚΟΣ;ΑΞΑΡΙΟΥ;http://telematics.oasa.gr/#stationInfo_420166;420166
+420189;ΠΛ. ΔΑΣΚΑΛΟΓΙΑΝΝΗ;ΠΛ.ΔΑΣΚΑΛΟΓΙΑΝΝΗ;http://telematics.oasa.gr/#stationInfo_420189;420189
+420196;ΕΚΑΤΟΔΕΝΔΡΑ;ΠΕΛΑΣΓΙΑΣ;http://telematics.oasa.gr/#stationInfo_420196;420196
+420201;9η ΖΩΟΔΟΧΟΥ ΠΗΓΗΣ;ΛΕΩΦ.ΒΕΝΙΖΕΛΟΥ;http://telematics.oasa.gr/#stationInfo_420201;420201
+420208;3η ΖΩΟΔΟΧΟΥ ΠΗΓΗΣ;ΑΓ.ΠΑΡΑΣΚΕΥΗΣ;http://telematics.oasa.gr/#stationInfo_420208;420208
+420226;ΑΡΓΥΡΟΚΑΣΤΡΟΥ;ΑΞΑΡΙΟΥ;http://telematics.oasa.gr/#stationInfo_420226;420226
+420246;ΦΟΥΡΝΟΣ;ΠΑΛ.ΚΑΒΑΛΑΣ;http://telematics.oasa.gr/#stationInfo_420246;420246
+420253;ΖΑΛΟΚΩΣΤΑ;ΠΑΡΑΣΚΕΥΟΠΟΥΛΟΥ;http://telematics.oasa.gr/#stationInfo_420253;420253
+420254;ΖΑΛΟΚΩΣΤΑ;ΠΑΡΑΣΚΕΥΟΠΟΥΛΟΥ;http://telematics.oasa.gr/#stationInfo_420254;420254
+420288;ΤΑΞΙΑΡΧΗΣ;ΣΑΡΑΝΤΑΠΟΡΟΥ;http://telematics.oasa.gr/#stationInfo_420288;420288
+430003;ΔΗΜΑΡΧΕΙΟ;25ης ΜΑΡΤΙΟΥ;http://telematics.oasa.gr/#stationInfo_430003;430003
+430004;ΠΑΛ. ΤΕΡΜΑ;25ης ΜΑΡΤΙΟΥ;http://telematics.oasa.gr/#stationInfo_430004;430004
+430007;Κ.ΠΑΛΑΜΑ - αλλάζει σε ??ΔΗΜΑΡΧΕΙΟ???;25ης ΜΑΡΤΙΟΥ;http://telematics.oasa.gr/#stationInfo_430007;430007
+480029;2η ΠΟΛΥΔΡΟΣΟΥ;ΓΙΑΣΕΜΙΩΝ;http://telematics.oasa.gr/#stationInfo_480029;480029
+480073;ΛΑΚΩΝΙΑΣ;ΟΛΥΜΠΟΥ;http://telematics.oasa.gr/#stationInfo_480073;480073
+480083;ΟΤΕ;ΑΓ.ΓΕΩΡΓΙΟΥ;http://telematics.oasa.gr/#stationInfo_480083;480083
+480116;ΑΡΚΑΔΙΑΣ;ΟΛΥΜΠΟΥ;http://telematics.oasa.gr/#stationInfo_480116;480116
+480142;ΑΡΔΗΤΤΟΥ;ΙΩΑΝΝΙΝΩΝ;http://telematics.oasa.gr/#stationInfo_480142;480142
+480164;1η ΑΠΟΣΤΟΛΟΠΟΥΛΟΥ;ΑΠΟΣΤΟΛΟΠΟΥΛΟΥ;http://telematics.oasa.gr/#stationInfo_480164;480164
+480170;ΠΑΡΝΩΝΟΣ;ΜΕΤΑΜΟΡΦΩΣΕΩΣ;http://telematics.oasa.gr/#stationInfo_480170;480170
+481179;ΕΛΙΚΩΝΟΣ;ΜΕΤΑΜΟΡΦΩΣΕΩΣ;http://telematics.oasa.gr/#stationInfo_481179;481179
+490020;1η ΣΧΟΛΕΙΩΝ ΧΟΛΑΡΓΟΥ;ΣΑΡΑΝΤΑΠΟΡΟΥ;http://telematics.oasa.gr/#stationInfo_490020;490020
+590042;ΑΡΓΟΝΑΥΤΩΝ;ΙΑΣΩΝΙΔΟΥ;http://telematics.oasa.gr/#stationInfo_590042;590042
+590043;ΤΡΑΠΕΖΑ;ΙΑΣΩΝΙΔΟΥ;http://telematics.oasa.gr/#stationInfo_590043;590043
+590044;ΕΚΚΛΗΣΙΑ;ΙΑΣΩΝΙΔΟΥ;http://telematics.oasa.gr/#stationInfo_590044;590044
+590045;ΙΑΣΩΝΙΔΟΥ;ΙΑΣΩΝΙΔΟΥ;http://telematics.oasa.gr/#stationInfo_590045;590045
+590046;ΓΟΥΝΑΡΗ;ΙΑΣΩΝΙΔΟΥ;http://telematics.oasa.gr/#stationInfo_590046;590046
+590047;ΕΚΚΛΗΣΙΑ;ΙΑΣΩΝΙΔΟΥ;http://telematics.oasa.gr/#stationInfo_590047;590047
+590049;ΑΡΓΟΝΑΥΤΩΝ;ΙΑΣΩΝΙΔΟΥ;http://telematics.oasa.gr/#stationInfo_590049;590049
+590059;ΤΡΑΠΕΖΑ;ΙΑΣΩΝΙΔΟΥ;http://telematics.oasa.gr/#stationInfo_590059;590059
+640009;ΔΙΑΣΤΑΥΡΩΣΗ;Π.ΤΣΑΛΔΑΡΗ;http://telematics.oasa.gr/#stationInfo_640009;640009
+640010;ΓΟΥΝΑΡΗ;Π.ΤΣΑΛΔΑΡΗ;http://telematics.oasa.gr/#stationInfo_640010;640010
+640011;ΠΑΠΑΔΗΜΗΤΡΙΟΥ;Π.ΤΣΑΛΔΑΡΗ;http://telematics.oasa.gr/#stationInfo_640011;640011
+670012;ΠΛ.Ν.ΠΕΝΤΕΛΗΣ;ΠΛ.ΗΡΩΩΝ ΠΟΛΥΤΕΧΝΕΙΟΥ;http://telematics.oasa.gr/#stationInfo_670012;670012
+690004;ΑΣΤΕΡΙΑ;25ης ΜΑΡΤΙΟΥ;http://telematics.oasa.gr/#stationInfo_690004;690004
+690005;ΠΑΛΑΜΑ;25ης ΜΑΡΤΙΟΥ;http://telematics.oasa.gr/#stationInfo_690005;690005
+690009;ΠΑΛΑΜΑ;25ης ΜΑΡΤΙΟΥ;http://telematics.oasa.gr/#stationInfo_690009;690009
+690010;ΑΣΤΕΡΙΑ;25ης ΜΑΡΤΙΟΥ;http://telematics.oasa.gr/#stationInfo_690010;690010
+690031;ΣΚΑΛΑΚΙΑ;ΑΔΡΙΑΝΟΥ;http://telematics.oasa.gr/#stationInfo_690031;690031
+710004;ΣΤΡΑΤΟΠΕΔΟ;ΚΥΠΡΟΥ;http://telematics.oasa.gr/#stationInfo_710004;710004
