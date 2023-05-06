@@ -37,28 +37,6 @@ def interpolation(start_datetime, end_datetime, num_points):
         #interpolated_datetimes = sorted(interpolated_datetimes)
     return interpolated_datetimes
 
-# inputs: 2 previous datetimes, corresponding number of stops (2),
-# stop orders with no datetimes, 'left' is True/False for missing values at start/end of route
-def extrapolation_legacy(datetimes, num_stops, stop_orders, left):
-    # There is NaT value in datetimes
-    if pd.isna(pd.Series(datetimes)).any():
-        return -1
-    # Find the start/end datetime
-    epoch = min(datetimes) if left else max(datetimes)
-    # Convert input datetimes to numeric values (seconds since epoch)
-    x_numeric = np.array([(dt - epoch).total_seconds() for dt in datetimes])
-    # Calculate polynomial coefficients for non-missing datetimes
-    coeffs = np.polyfit(x_numeric, num_stops, deg=1)
-    # Extrapolate for the set of stop orders
-    y_new = coeffs[0] * np.array(stop_orders) + coeffs[1]
-    length_y = len(y_new)
-    # Convert numeric values back to datetimes using the custom epoch
-    x_new = np.array([epoch - timedelta(seconds= (length_y-i)*20) if left else epoch + timedelta(seconds=y*2*(i+1)) for i, y in enumerate(y_new)])
-    # Convert datetimes to strings in desired format
-    x_new_strings = [dt.strftime('%Y-%m-%d %H:%M:%S') for dt in x_new]
-
-    return x_new_strings if len(x_new_strings) > 1 else x_new_strings[0]
-
 def extrapolation(datetimes, between_points, extra_points, before):
     #Args:
     #start_datetime: starting datetime
@@ -76,23 +54,65 @@ def extrapolation(datetimes, between_points, extra_points, before):
     delta = (end_datetime - start_datetime) / (between_points - 1)
     if before:
         extrapolated_datetimes = [(start_datetime - i * delta).strftime('%Y-%m-%d %H:%M:%S.%f')[:-7] for i in range(1,extra_points+1)]
-        extrapolated_datetimes.reverse()
     else:
         extrapolated_datetimes = [(end_datetime + i * delta).strftime('%Y-%m-%d %H:%M:%S.%f')[:-7] for i in range(1,extra_points+1)]
 
     return extrapolated_datetimes if len(extrapolated_datetimes) > 1 else extrapolated_datetimes[0]
 
+def interpolation_int(start, end, num_points):
+    """
+    Interpolates between two datetimes with a specified number of points.
+
+    Args:
+    start_datetime (datetime): The starting datetime object.
+    end_datetime (datetime): The ending datetime object.
+    num_points (int): The number of interpolated points, excluding start and end points.
+
+    Returns:
+    list: A list of interpolated datetime objects.
+    """
+    if num_points < 2:
+        interpolated = start + (end - start)/2
+    else:
+        delta = (end - start) / (num_points + 1)
+        interpolated = [(start + i * delta) for i in range(1,num_points+1)]
+    return interpolated
+
+def extrapolation_int(ints, between_points, extra_points, before):
+    #Args:
+    #start_datetime: starting datetime
+    #end_datetime: ending datetime
+    #between_points: number of points between start and end datimes, including them
+    #extra_points: how many points to extrapolate
+    #before: true to generate points before start, end to generate points after end
+    start = ints[0]
+    end = ints[1]
+
+    #hacks
+    between_points = between_points[1] - between_points[0] + 1
+    extra_points = len(extra_points)
+
+    delta = (end - start) / (between_points - 1)
+    if before:
+        extrapolated = [max(0, (start - i * delta)) for i in range(1,extra_points+1)]
+        extrapolated.reverse()
+    else:
+        extrapolated = [max(0, (end + i * delta)) for i in range(1,extra_points+1)]
+
+
+
+    return extrapolated if len(extrapolated) > 1 else extrapolated[0]
 
 # 1: write updated rows to csv
 # 2: fill the missing values in df
-def update_values(df, stops_missing, values, type):
+def update_values(df, stops_missing, values, typee):
     length = len(stops_missing)
     for count, value  in enumerate(stops_missing):
         if length == 1:
-            df.loc[value-1, 'Arrival_datetime'] = values
+            df.loc[value-1, 'T_pa_in_veh'] = int(values)
         else:
-            df.loc[value-1, 'Arrival_datetime'] = values[count]
-        df.loc[value-1, 'Type_intp'] = type
+            df.loc[value-1, 'T_pa_in_veh'] = int(values[count])
+        df.loc[value-1, 'Type_intp'] = typee
 
 def make_dataset(csv_file):
 
@@ -139,15 +159,10 @@ def make_dataset(csv_file):
                     continue
 
                 group_sorted['Changed'] = group_sorted['T_pa_in_veh'].isnull()
-                imputer=SimpleImputer(strategy='mean')
-
-                group_sorted['T_pa_in_veh'] = imputer.fit_transform(group_sorted['T_pa_in_veh'].values.reshape(-1, 1))
-                group_sorted['T_pa_in_veh'] = group_sorted['T_pa_in_veh'].round().astype(int)
-
 
                 # Iterate over each row of the sorted group
                 for i, row in group_sorted.iterrows():
-                    now = pd.to_datetime(row['Arrival_datetime'])
+                    now = row['T_pa_in_veh']
                     now_res = now
                     #Stop has no arrival_datetime
                     if pd.isna(now):
@@ -161,11 +176,11 @@ def make_dataset(csv_file):
                             stop_counter_extp = stop_counter_intp + 1
                             if next == prev:
                                 try:
-                                    prev = pd.to_datetime(group_sorted.loc[stop_i-2,'Arrival_datetime'])
+                                    prev = pd.to_datetime(group_sorted.loc[stop_i-2,'T_pa_in_veh'])
                                 except:
                                     print('not enough values to extrapolate 1', name[0])
                                     break
-                            now_res = extrapolation([prev,next],[stop_i-2, stop_i-1], range(n - stop_counter_extp +1, n + 1), False)
+                            now_res = extrapolation_int([prev,next],[stop_i-2, stop_i-1], range(n - stop_counter_extp +1, n + 1), False)
                             if now_res != -1:
                                 #fill all missing values of interpolation (end of route)
                                 update_values(group_sorted, range(stop_i+1, n+1), now_res,'extp_end')
@@ -188,7 +203,7 @@ def make_dataset(csv_file):
                                 next = now
                                 stop_ord_1 = stop_counter_extp + 1
                                 stop_ord_2 = stop_ord_1 + stop_counter_intp + 1
-                                now_res = extrapolation([prev,next],[stop_ord_1, stop_ord_2], range(0,stop_counter_extp), True)
+                                now_res = extrapolation_int([prev,next],[stop_ord_1, stop_ord_2], range(0,stop_counter_extp), True)
                                 if now_res != -1:
                                     #fill all missing values of extrapolation (start of route)
                                     update_values(group_sorted,  range(1,stop_counter_extp+1), now_res, 'extp_start')
@@ -201,7 +216,7 @@ def make_dataset(csv_file):
                                 stop_i += 1
                                 if intp:
                                     #print('intp-extp')
-                                    now_res = interpolation(prev, next, stop_counter_intp)
+                                    now_res = interpolation_int(prev, next, stop_counter_intp)
                                     #fill all missing values of interpolation exactly after extrapolation (start of route)
                                     update_values(group_sorted,  range(stop_i, stop_i+stop_counter_intp), now_res, 'intp-extp')
                                     stop_i += stop_counter_intp
@@ -212,7 +227,7 @@ def make_dataset(csv_file):
                             #print('intp')
                             stop_i += stop_counter_intp + 1
                             next = now
-                            now_res = interpolation(prev, next, stop_counter_intp)
+                            now_res = interpolation_int(prev, next, stop_counter_intp)
                             #fill all missing values of interpolation (middle values)
                             update_values(group_sorted,  range(stop_i - stop_counter_intp, stop_i), now_res, 'intp')
                             stop_counter_intp = 0
@@ -229,6 +244,7 @@ def make_dataset(csv_file):
 
                 group_sorted = group_sorted.sort_values('S_order', ascending=True)
                 group_sorted = group_sorted.reset_index()
+                group_sorted['T_pa_in_veh'] = group_sorted['T_pa_in_veh'].astype(int)
                 group_sorted[['Line_descr','S_order','Arrival_datetime','Type_intp','T_pa_in_veh','Changed']].to_csv(target, mode='a', index=False, header=False)
                 #group_sorted.to_csv(target, mode='a', index=False, header=False)
     else:
