@@ -306,7 +306,7 @@ def make_dataset(csv_file):
 
             # Get time parameters
             datetimes = pd.to_datetime(group_sorted['Arrival_datetime'])
-            day_of_week = datetimes.dt.isocalendar().week
+            day_of_week = datetimes.dt.isocalendar().weekday
             week_of_year = datetimes.dt.isocalendar().week
             day_of_month = datetimes.dt.day
             day_of_year = datetimes.dt.dayofyear
