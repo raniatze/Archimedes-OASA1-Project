@@ -16,12 +16,18 @@ client = pymongo.MongoClient('mongodb://localhost:27017/')
 # Choose the database and collection to work with
 db = client['OASA1']
 
+route_ids = {}
+rtype_ids = {}
+value_route_id = 0
+value_rtype = 0
+
 def find_csv_files(directory):
     csv_files = []
     for root, _, files in os.walk(directory):
         for file in files:
             if file.endswith('.csv'):
-                csv_files.append(os.path.join(root, file))
+                if not file.endswith('ake_updated.csv'):
+                    csv_files.append(os.path.join(root, file))
     return csv_files
 def interpolation(start_datetime, end_datetime, num_points):
     """
@@ -235,9 +241,12 @@ def fill_na_dimoi(d):
         if v is None:
             d[k] = non_null_values[0]
 
-
-
 def make_dataset(csv_file):
+
+    global route_ids
+    global rtype_ids
+    global value_route_id
+    global value_rtype
 
     # Read the CSV file into a DataFrame
     df = pd.read_csv(csv_file, sep=';')
@@ -246,9 +255,8 @@ def make_dataset(csv_file):
     grouped = df.groupby(['Line_descr', 'Rtype', 'Direction', 'Sched', 'Vehicle_no'])
 
     # Split the file path into directory and filename components
-    # dir_path, _ = os.path.split(csv_file)
-    # updated_csv_file = os.path.join(dir_path, 'ake_updated.csv')
-    updated_csv_file = # 'new directory path' + str(csv_file.split('.')[0].split('/')[-2]) + '_output.csv'
+    dir_path, _ = os.path.split(csv_file)
+    updated_csv_file = os.path.join(dir_path, 'ake_updated.csv')
 
     with open(updated_csv_file, 'w') as output_file:
 
@@ -279,6 +287,14 @@ def make_dataset(csv_file):
 
             # Query the database for route_id and dimos
             route_id_dict = {ld: get_route_id(*ld.split(" - ",1)) for ld in unique_line_descr}
+
+            if route_id_dict[unique_line_descr[0]] not in route_ids:
+                route_ids[route_id_dict[unique_line_descr[0]]] = value_route_id
+                value_route_id += 1
+
+            if group_sorted['Rtype'][0] not in rtype_ids:
+                rtype_ids[group_sorted['Rtype'][0]] = value_rtype
+                value_rtype += 1
             # print('Route OK')
 
             dimos_dict = {si: get_dimos(si) for si in unique_stop_id}
@@ -330,8 +346,8 @@ def make_dataset(csv_file):
 
             # Get the data in the desired format and write to CSV
             data = {
-                'Route_id': [route_id_dict[ld] for ld in group_sorted['Line_descr']],
-                'Rtype': group_sorted['Rtype'],
+                'Route_id': route_ids[route_id_dict[unique_line_descr[0]]],
+                'Rtype': rtype_ids[group_sorted['Rtype'][0]],
                 'Stop_id': group_sorted['Stop_id'],
                 'Stop_order': group_sorted['S_order'],
                 'Minute_of_day': minute_of_day,
@@ -342,7 +358,7 @@ def make_dataset(csv_file):
                 'Is_holiday': is_holiday,
                 'Temperature': temperature,
                 'Precipitation': precipitation,
-                'T_pa_in_veh': group_sorted['T_pa_in_veh']
+                'T_pa_in_veh': group_sorted['T_pa_in_veh'].astype('int')
             }
             # Convert the data to a DataFrame and write to CSV
             df = pd.DataFrame(data)
@@ -358,5 +374,5 @@ def process_files(directory):
         #x = input()
 
 if __name__ == '__main__':
-    directory =  #input('Enter the directory path to search for .csv files: ')
+    directory = '/home/laguna/Documents/OASA1/ake/AKE/' #input('Enter the directory path to search for .csv files: ')
     process_files(directory)
