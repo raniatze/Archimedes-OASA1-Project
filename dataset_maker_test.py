@@ -314,11 +314,12 @@ def make_dataset(csv_file):
             # total_secs = datetimes.dt.second + datetimes.dt.minute * 60
             # total_secs_rounded = (total_secs / 60).apply(lambda x: round(x)) * 60
             # minute_of_day = datetimes + pd.to_timedelta(total_secs_rounded - total_secs, unit='s')
-            minute_of_day = datetimes.dt.hour * 60 + datetimes.dt.minute + datetimes.dt.second
+            minute_of_day = datetimes.dt.hour * 60 + datetimes.dt.minute
             # print('Dates OK')
             # Check if day was public holiday
             holidays_list = holidays.GR(years=year).keys()
             is_holiday = datetimes.apply(lambda x: is_holiday_check(x, holidays_list))
+            is_holiday = 1 if is_holiday else 0
             # print('Holidays OK')
             # Get historical weather data
             rounded_time = datetimes.apply(lambda x: pd.to_datetime(x) + timedelta(minutes=30))
