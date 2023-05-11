@@ -9,6 +9,9 @@ def find_csv_files(directory):
             if file.endswith('.csv'):
                 csv_files.append(os.path.join(root, file))
     return csv_files
+    
+def clean_line_descr(line_descr):
+    return ' '.join(s.strip() for s in line_descr.split('-'))
 
 def combine_dicts(dict1, dict2):
     combined_dict = dict1.copy()
@@ -30,8 +33,11 @@ def process_files(directory):
     for file in csv_files:
         #content = read_csv_file(file)
         df = pd.read_csv(file, sep = ';')
+        
+        df['clean_line_descr'] = df['Line_descr'].apply(clean_line_descr)
 
-        grouped_data = df.groupby('Line_descr')
+
+        grouped_data = df.groupby('clean_line_descr')
 
         stats_by_route = grouped_data.agg(
             missing_values=('T_pa_in_veh', lambda x: x.isnull().sum()),
@@ -51,11 +57,12 @@ def process_files(directory):
 
     data = []
     for string, count in counts.items():
-        line = string.split(';')[0]
+        line_descr = string.split(';')[0]
+        new_line_descr = ' '.join(s.strip() for s in line_descr.split('-'))
         count['missing_pass_perc'] = count['missing_values'] / count['occurrences']
         count['missing_date_perc'] = count['missing_dates'] / count['occurrences']
         
-        count['line'] = line
+        count['line'] = new_line_descr
 
         data.append(count)
 
