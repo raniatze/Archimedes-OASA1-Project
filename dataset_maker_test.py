@@ -9,6 +9,7 @@ from datetime import datetime, timedelta
 import numpy as np
 from bisect import bisect_left,bisect_right
 from time import time
+from cityhash import CityHash64
 
 # Set up the connection to the MongoDB server
 client = pymongo.MongoClient('mongodb://localhost:27017/')
@@ -261,7 +262,7 @@ def make_dataset(csv_file):
     with open(updated_csv_file, 'w') as output_file:
 
         # Write header row in output_file
-        headers = pd.DataFrame(columns=['Route_id', 'Rtype', 'Stop_id', 'Stop_order', 'Minute_of_day', 'Day_of_month', 'Day_of_week', 'Week_of_year', 'Day_of_year', 'Is_holiday', 'Temperature', 'Precipitation', 'T_pa_in_veh'])
+        headers = pd.DataFrame(columns=['Route_id', 'Rtype', 'Stop_id', 'Stop_order', 'Minute_of_day', 'Day_of_month', 'Day_of_week', 'Week_of_year', 'Day_of_year', 'Is_holiday', 'Temperature', 'Precipitation', 'T_pa_in_veh', 'Unique_hash'])
         headers.to_csv(output_file, header = 'True', index=False, mode = 'w')
 
         # Iterate over each group
@@ -288,8 +289,8 @@ def make_dataset(csv_file):
             # Query the database for route_id and dimos
             route_id_dict = {ld: get_route_id(*ld.split(" - ",1)) for ld in unique_line_descr}
 
-            if route_id_dict[unique_line_descr[0]] not in route_ids:
-                route_ids[route_id_dict[unique_line_descr[0]]] = value_route_id
+            if unique_line_descr[0] not in route_ids:
+                route_ids[unique_line_descr[0]] = value_route_id
                 value_route_id += 1
 
             if group_sorted['Rtype'][0] not in rtype_ids:
@@ -306,7 +307,7 @@ def make_dataset(csv_file):
 
             # Get time parameters
             datetimes = pd.to_datetime(group_sorted['Arrival_datetime'])
-            day_of_week = datetimes.dt.isocalendar().weekday
+            day_of_week = datetimes.dt.isocalendar().day
             week_of_year = datetimes.dt.isocalendar().week
             day_of_month = datetimes.dt.day
             day_of_year = datetimes.dt.dayofyear
@@ -318,8 +319,8 @@ def make_dataset(csv_file):
             # print('Dates OK')
             # Check if day was public holiday
             holidays_list = holidays.GR(years=year).keys()
-            is_holiday = datetimes.apply(lambda x: is_holiday_check(x, holidays_list))
-            is_holiday = 1 if is_holiday else 0
+            is_holiday = datetimes.apply(lambda x: is_holiday_check(x, holidays_list)).astype(int)
+            #is_holiday = 1 if is_holiday else 0
             # print('Holidays OK')
             # Get historical weather data
             rounded_time = datetimes.apply(lambda x: pd.to_datetime(x) + timedelta(minutes=30))
@@ -345,9 +346,13 @@ def make_dataset(csv_file):
             precipitation = [wd['precipitation'] if wd else None for wd in weather_data]
             # print('Weather OK')
 
+            #dataframe_string = group.to_string()
+            dataframe_string = str(name)
+            unique_hash = CityHash64(dataframe_string)
+
             # Get the data in the desired format and write to CSV
             data = {
-                'Route_id': route_ids[route_id_dict[unique_line_descr[0]]],
+                'Route_id': route_ids[unique_line_descr[0]],
                 'Rtype': rtype_ids[group_sorted['Rtype'][0]],
                 'Stop_id': group_sorted['Stop_id'],
                 'Stop_order': group_sorted['S_order'],
@@ -359,7 +364,8 @@ def make_dataset(csv_file):
                 'Is_holiday': is_holiday,
                 'Temperature': temperature,
                 'Precipitation': precipitation,
-                'T_pa_in_veh': group_sorted['T_pa_in_veh'].astype('int')
+                'T_pa_in_veh': group_sorted['T_pa_in_veh'].astype('int'),
+                'Unique_hash': unique_hash
             }
             # Convert the data to a DataFrame and write to CSV
             df = pd.DataFrame(data)
@@ -375,5 +381,5 @@ def process_files(directory):
         #x = input()
 
 if __name__ == '__main__':
-    directory = '/home/laguna/Documents/OASA1/ake/AKE/' #input('Enter the directory path to search for .csv files: ')
+    directory = './AKE/2021/2021/04/2021-04-13_akedata/' #input('Enter the directory path to search for .csv files: ')
     process_files(directory)
