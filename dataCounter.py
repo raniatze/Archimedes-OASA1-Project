@@ -31,7 +31,9 @@ def process_files(directory):
         content = read_csv_file(file)
         for line in content[1:]:
             # Get the string
-            string = line.split(';')[0]
+            line_descr = line.split(';')[0]
+            new_line_descr = ' '.join(s.strip() for s in line_descr.split('-'))
+            #new_route = route.replace('-', '')
             # Get veh_no
             vehicle_no = line.split(';')[5]
             # Get direction
@@ -39,9 +41,9 @@ def process_files(directory):
             # Get stop id
             stop_id = line.split(';')[7]
             # Increment the count for this string
-            counts[string] = counts.get(string, 0) + 1
+            counts[new_line_descr] = counts.get(new_line_descr, 0) + 1
             # Add string to routes
-            routes.add(string)
+            routes.add(new_line_descr)
             # Add vehicle_no to vehicles
             vehicles.add(vehicle_no)
             # Add direction to directions
@@ -53,6 +55,15 @@ def process_files(directory):
     #for string, count in counts.items():
         #print(f'{string}: {count}')
         
+    #for route in routes:
+      #result = db.line_categories.find({"Line_descr": route}, {"Category": 1})
+      #count = len(list(result))
+      #if count == 0:
+         #print(route)
+      #else:
+         #for doc in result:
+           #category = doc["Category"]
+
     # Print the counts for each string
     #for vehicle_no in vehicles:
       #print(vehicle_no)
@@ -63,12 +74,15 @@ def process_files(directory):
            
     #for stop_id in stop_ids:
        #result = db.staseis_dimoi.find({"stop_id": stop_id}, {"dimos": 1})
-       #for doc in result:
-         #if doc["dimos"] == '':
-            #print(stop_id)
+       #count = len(list(result))
+       #if count == 0:
+          #print(stop_id)
+       #else:
+          #for doc in result:
+            #dimos = doc["dimos"]
            
     #print(directions)
-    #print(routes)
+    print(routes)
     print("#routes: ", len(routes))
     print("#vehicles: ", len(vehicles))
     print("#stop_ids: ", len(stop_ids))
