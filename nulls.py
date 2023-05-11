@@ -2,13 +2,13 @@ import os
 import pandas as pd
 import csv
 
-def find_txt_files(directory):
-    txt_files = []
+def find_csv_files(directory):
+    csv_files = []
     for root, _, files in os.walk(directory):
         for file in files:
-            if file.endswith('.txt'):
-                txt_files.append(os.path.join(root, file))
-    return txt_files
+            if file.endswith('.csv'):
+                csv_files.append(os.path.join(root, file))
+    return csv_files
 
 def combine_dicts(dict1, dict2):
     combined_dict = dict1.copy()
@@ -25,10 +25,10 @@ def combine_dicts(dict1, dict2):
 
 
 def process_files(directory):
-    txt_files = find_txt_files(directory)
+    csv_files = find_csv_files(directory)
     counts = {}
-    for file in txt_files:
-        #content = read_txt_file(file)
+    for file in csv_files:
+        #content = read_csv_file(file)
         df = pd.read_csv(file, sep = ';')
 
         grouped_data = df.groupby('Line_descr')
@@ -50,9 +50,8 @@ def process_files(directory):
         '''
 
     data = []
-
     for string, count in counts.items():
-        line = string.split(' - ')[0]
+        line = string.split(';')[0]
         count['missing_pass_perc'] = count['missing_values'] / count['occurrences']
         count['missing_date_perc'] = count['missing_dates'] / count['occurrences']
         
@@ -75,6 +74,5 @@ def process_files(directory):
             writer.writerow(row)
 
 if __name__ == '__main__':
-    directory = './AKE/'#input('Enter the directory path to search for .txt files: ')
+    directory = '/home/raniatze/AKE/'#input('Enter the directory path to search for .csv files: ')
     process_files(directory)
-
