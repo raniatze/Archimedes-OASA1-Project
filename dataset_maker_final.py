@@ -18,12 +18,13 @@ client = pymongo.MongoClient('mongodb://localhost:27017/')
 db = client['OASA1']
 
 route_ids = {}
-rtype_ids = {}
+#rtype_ids = {}
 stop_ids = {}
 value_route_id = 0
-value_rtype = 0
+#value_rtype = 0
 value_stop = 0
 
+files_read = set()
 
 def find_csv_files(directory):
     csv_files = []
@@ -35,9 +36,53 @@ def find_csv_files(directory):
     print('Found', len(csv_files), 'files.')
     return csv_files
 
-def create_file(filename):
-    with open(filename, 'w') as file:
-        pass
+def file_exists(filename):
+    try:
+        with open(filename, 'r') as file:
+            return True
+    except FileNotFoundError:
+        return False
+
+def load_encoding_file_data(filename):
+    data = {}
+    counter = 0
+    with open(filename, 'r') as file:
+        for line in file:
+            line = line.strip()
+            if line:
+                key, value = line.split(':')
+                value = int(value.strip())
+                data[key.strip()] = value
+                if value > counter:
+                    counter = value
+    return data, counter
+
+def init_encoding_file(filename):
+    if file_exists(filename):
+        return load_encoding_file_data(filename)
+    else:
+        with open(filename, 'w') as file:
+            pass
+        return {}, 0
+
+def load_files_file_data(filename):
+    data = set() 
+    with open(filename, 'r') as file:
+        for line in file:
+            line = line.strip()
+            if line:
+                data.add(line)
+    return data
+
+#file that remembers which files we have already checked
+def init_files_file(filename):
+    if file_exists(filename):
+        return load_files_file_data(filename)
+    else:
+        with open(filename, 'w') as file:
+            pass
+        return set()
+
 
 def append_to_file(filename, line):
     with open(filename, 'a') as file:
@@ -298,7 +343,7 @@ def make_dataset(csv_file):
     #global rtype_ids
     global stop_ids
     global value_route_id
-    global value_rtype
+    #global value_rtype
     global value_stop
     global flag_exception
 
@@ -328,13 +373,17 @@ def make_dataset(csv_file):
 
         # Iterate over each group
         # Iterate over the groups and process each row
+        #counterrr = 0
         for name, group in grouped:
+            #counterrr += 1
+            #if counterrr > 4:
+            #    break
             print(name)
 
             # Sort the entries of the group by S_order column in ascending order
             group_sorted = group.sort_values('S_order', ascending=True)
             group_sorted = group_sorted.reset_index()
-            group_sorted['Arrival_datetime'] = pd.to_datetime(group_sorted['Arrival_datetime'])#, format='%Y-%m-%d %H:%M:%S')
+            group_sorted['Arrival_datetime'] = pd.to_datetime(group_sorted['Arrival_datetime'], format='%Y-%m-%d %H:%M:%S')
 
             
             group_sorted['Stop_id'] = group_sorted['Stop_id'].str.strip()
@@ -467,16 +516,22 @@ def process_files(directory):
     csv_files = find_csv_files(directory)
     for csv_file in csv_files:
         print(csv_file)
+        if csv_file in files_read:
+            print("Already read", csv_file)
+            continue
         make_dataset(csv_file)
+        append_to_file('Files_read.txt', csv_file)
         #x = input()
 
 if __name__ == '__main__':
     #cache_route_id()
     cache_dimos()
-    create_file('Line_descr_encodings')
-    create_file('Stop_id_encodings')
+    route_ids, value_route_id = init_encoding_file('Line_descr_encodings')
+    stop_ids, value_stop = init_encoding_file('Stop_id_encodings')
+
+    files_read = init_files_file('Files_read.txt')
 
 
 
-    directory = './AKE/2021/2021/04/2021-04-13_akedata/' #input('Enter the directory path to search for .csv files: ')
+    directory = './AKE/'#2021/2021/04/2021-04-14_akedata/' #input('Enter the directory path to search for .csv files: ')
     process_files(directory)
