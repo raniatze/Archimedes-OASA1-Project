@@ -14,9 +14,9 @@ import multiprocessing
 import fcntl
 
 
-num_processors = 10
+num_processors = 6
 
-directory = './AKE/'#2021/2021/04/2021-04-14_akedata/' #input('Enter the directory path to search for .csv files: ')
+directory = '/home/raniatze/AKE/2021/2021/08/' #2021/2021/04/2021-04-14_akedata/' #input('Enter the directory path to search for .csv files: ')
 
 # Set up the connection to the MongoDB server
 client = pymongo.MongoClient('mongodb://localhost:27017/')
@@ -401,7 +401,7 @@ def make_dataset(csv_file):
             group_sorted['Arrival_datetime'] = pd.to_datetime(group_sorted['Arrival_datetime'], format='%Y-%m-%d %H:%M:%S')
 
             
-            group_sorted['Stop_id'] = group_sorted['Stop_id'].str.strip()
+            group_sorted['Stop_id'] = group_sorted['Stop_id'].str.strip().str.lstrip('0')
 
             # Drop null rows in 'Arrival_datetime' column
             group_sorted_full = group_sorted.dropna(subset=['Arrival_datetime'])
