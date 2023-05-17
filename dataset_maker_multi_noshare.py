@@ -16,7 +16,7 @@ import fcntl
 
 num_processors = 6
 
-directory = '/home/raniatze/AKE/2021/2021/08/' #2021/2021/04/2021-04-14_akedata/' #input('Enter the directory path to search for .csv files: ')
+directory = '/home/raniatze/AKE/2021/2021/08/2021-08-01_akedata/' #2021/2021/04/2021-04-14_akedata/' #input('Enter the directory path to search for .csv files: ')
 
 # Set up the connection to the MongoDB server
 client = pymongo.MongoClient('mongodb://localhost:27017/')
@@ -500,6 +500,10 @@ def make_dataset(csv_file):
             for doc in db.weather.find({"municipality": {"$in": list(unique_dimos)}, "timestamp": {"$in": unique_timestamps}}, {"municipality": 1, "timestamp": 1, "temperature": 1, "precipitation": 1}):
                 key = (doc['municipality'], pd.Timestamp(doc['timestamp']))
                 weather_data_dict[key] = {'temperature': doc['temperature'], 'precipitation': doc['precipitation']}
+                
+            if weather_data_dict == {}:
+               print("EMPTY WEATHER DATA DICT")
+               exit()
 
             # Get the weather data for each row
             weather_data = []
