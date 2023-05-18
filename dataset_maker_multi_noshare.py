@@ -16,7 +16,7 @@ import fcntl
 
 num_processors = 6
 
-directory = '/home/raniatze/AKE/2021/2021/08/2021-08-01_akedata/' #2021/2021/04/2021-04-14_akedata/' #input('Enter the directory path to search for .csv files: ')
+directory = '/home/raniatze/AKE/2021/2021/10/' #2021/2021/04/2021-04-14_akedata/' #input('Enter the directory path to search for .csv files: ')
 
 # Set up the connection to the MongoDB server
 client = pymongo.MongoClient('mongodb://localhost:27017/')
@@ -383,7 +383,7 @@ def make_dataset(csv_file):
     with open(updated_csv_file, 'w') as output_file:
 
         # Write header row in output_file
-        headers = pd.DataFrame(columns=['Line_descr', 'Direction', 'Stop_id', 'Stop_order', 'Minute_of_day', 'Day_of_month', 'Day_of_week', 'Week_of_year', 'Day_of_year', 'Is_holiday', 'Temperature', 'Precipitation', 'T_pa_in_veh', 'Unique_hash', 'Year'])
+        headers = pd.DataFrame(columns=['Line_descr', 'Direction', 'Stop_id', 'Stop_order', 'Minute_of_day', 'Day_of_month', 'Day_of_week', 'Week_of_year', 'Day_of_year', 'Is_holiday', 'Temperature', 'Precipitation', 'T_pa_in_veh', 'Sched', 'Year'])
         headers.to_csv(output_file, header = 'True', index=False, mode = 'w')
 
         # Iterate over each group
@@ -517,7 +517,7 @@ def make_dataset(csv_file):
 
             #dataframe_string = group.to_string()
             dataframe_string = str(name[:3])
-            unique_hash = CityHash64(dataframe_string)
+            #unique_hash = CityHash64(dataframe_string)
 
             # Get the data in the desired format and write to CSV
             data = {
@@ -535,7 +535,7 @@ def make_dataset(csv_file):
                 'Temperature': temperature,
                 'Precipitation': precipitation,
                 'T_pa_in_veh': group_sorted['T_pa_in_veh'].astype('int'),
-                'Unique_hash': unique_hash,
+                'Sched': group_sorted['Sched'],
                 'Year': year
             }
             # Convert the data to a DataFrame and write to CSV
