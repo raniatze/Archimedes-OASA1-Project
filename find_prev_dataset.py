@@ -138,6 +138,7 @@ counter = 0
 
 for doc in sample:
 
+    prev_day_flag = False
     dataframes = []
     df_prev_stops = pd.DataFrame(doc['docs'],dtype=str)
 
@@ -147,13 +148,22 @@ for doc in sample:
     day = df_prev_stops.loc[0,'Day_of_year']
     sched = df_prev_stops.loc[0,'Sched']
 
+    # No previous days for this day/sched
+    # day = '141'
+    # sched = '20:25:00'
+
     print(line,direction,sched,day,year)
     x = int(df_prev_stops['Stop_order'].count())
 
     pipeline2 = query2(line, direction, sched, day, x)
     res_docs2 = query_db(pipeline2)
 
-    prev_days = to_df_previous_days(res_docs2)
+    # Check if the returned result docs is empty list
+    try:
+        prev_days = to_df_previous_days(res_docs2)
+    except:
+        prev_day_flag = True
+        print('No previous days')
 
     df_prev_stops['Stop_order'] = df_prev_stops['Stop_order'].astype('int')
     df_prev_stops.sort_values('Stop_order', ascending = True, inplace = True)
@@ -163,10 +173,17 @@ for doc in sample:
 
         current_stop = row['Stop_order']
         prev_stops_i = find_prev_stops(df_prev_stops, current_stop-1)
-        prev_days_i = prev_days.loc[prev_days['Stop_order'] == current_stop]
 
-        if len(prev_days_i) < 2 :
-            data = (2-i)*[[np.nan] * 15]
+        if prev_day_flag:
+            # if no previous days
+            prev_days_i = pd.DataFrame()
+        else:
+            prev_days_i = prev_days.loc[prev_days['Stop_order'] == current_stop]
+
+        s = prev_days_i.shape[0]
+        # if previous days are less than 2
+        if s < 2 :
+            data = (2-s)*[[np.nan] * 15]
             zeros_df = pd.DataFrame(data, columns=df_prev_stops.columns)
             prev_days_i = pd.DataFrame(zeros_df)
 
