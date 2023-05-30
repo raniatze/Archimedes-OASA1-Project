@@ -61,10 +61,8 @@ def create_input_sequences(line_descr_df, m, n):
 
    # Group the data by Day_of_year
    grouped_data = line_descr_df.groupby(['Direction', 'Sched'])
-   counter = 0
    for name, group in grouped_data:
-      if counter == 5:
-         break
+
       print("################################################### NEW GROUP #####################################")
       print(name)
       group_sorted = group.sort_values(['Year', 'Day_of_year', 'Stop_order'], ascending=[True, True, True])
@@ -105,7 +103,7 @@ def create_input_sequences(line_descr_df, m, n):
                   # print(new_previous_days)
 
                # Combine the previous stops and previous days' stops
-               inputs = pd.concat([previous_stops, previous_days], axis=0).reset_index(drop=True)
+               inputs = pd.concat([new_previous_stops, new_previous_days], axis=0).reset_index(drop=True)
                inputs.drop(['Sched', 'Year'], axis=1, inplace=True)
                print("Input")
                print(inputs)
@@ -117,7 +115,6 @@ def create_input_sequences(line_descr_df, m, n):
                target_values.append(target)
       else:
          continue
-      counter += 1
    # Convert the input_sequences and target_values to numpy arrays
    input_sequences = np.array(input_sequences)
    target_values = np.array(target_values)
