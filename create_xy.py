@@ -35,12 +35,12 @@ def get_previous_stops(m, index, df):
 
 def get_previous_days(n, index, df, stops_dict):
     result_df = pd.DataFrame()
-    current_stop_order = df.iloc[index]['Stop_order']
+    current_stop_order,current_stop_id = df.iloc[index]['Stop_order'], df.iloc[index]['Stop_id']
 
-    if current_stop_order not in stops_dict:
-        stops_dict[current_stop_order] = df[df['Stop_order'] == current_stop_order]
+    if (current_stop_order, current_stop_id) not in stops_dict:
+        stops_dict[(current_stop_order, current_stop_id)] = df[(df['Stop_id'] == current_stop_id) & (df['Stop_order'] == current_stop_order)]
 
-    filtered_df = stops_dict[current_stop_order]
+    filtered_df = stops_dict[(current_stop_order, current_stop_id)]
     # print('Filtered df \n', filtered_df, index)
     new_index = filtered_df.index.get_loc(index)
 
@@ -97,10 +97,10 @@ def create_input_sequences(line_descr_df, m, n):
                      new_previous_days = copy_rows(previous_days, num_missing_days)
                   else:
                      new_previous_days = previous_days
-                  # print("Previous stops")
-                  # print(new_previous_stops)
-                  # print("Previous days")
-                  # print(new_previous_days)
+                  print("Previous stops")
+                  print(new_previous_stops)
+                  print("Previous days")
+                  print(new_previous_days)
 
                # Combine the previous stops and previous days' stops
                inputs = pd.concat([new_previous_stops, new_previous_days], axis=0).reset_index(drop=True)
