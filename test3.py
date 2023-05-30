@@ -95,7 +95,7 @@ def create_input_sequences(line_descr_df, m, n):
                    print(new_previous_days)
                    
                 # Combine the previous stops and previous days' stops
-                inputs = pd.concat([previous_stops, previous_days], axis=0).reset_index(drop=True)
+                inputs = pd.concat([new_previous_stops, new_previous_days], axis=0).reset_index(drop=True)
                 inputs.drop(['Sched', 'Year'], axis=1, inplace=True)
                 print("Input")
                 print(inputs)
