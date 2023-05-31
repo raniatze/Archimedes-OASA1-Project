@@ -69,13 +69,13 @@ def create_input_sequences(line_descr_df, m, n):
       group_sorted = group_sorted.reset_index(drop=True)
       # Get the sequence length for the current Day_of_year group
       group_length = len(group_sorted)
-
+      stops_dict = {}
 
       if group_length > m:
 
          # Iterate over the group, starting from sequence_length index
          for i in range(m, group_length):
-               stops_dict = {}
+
                # Get the previous stops and days for the current instance
                previous_stops, previous_days = get_previous_stops(m, i, group_sorted), get_previous_days(n, i, group_sorted, stops_dict)
                num_previous_stops, num_previous_days = len(previous_stops), len(previous_days)
