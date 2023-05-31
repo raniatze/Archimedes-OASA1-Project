@@ -61,7 +61,7 @@ def create_input_sequences(num_line_descr, line_descr_df, m, n):
     folder_path = 'LSTM_Dataset_' + num_line_descr
     os.makedirs(folder_path)
 
-    with open(os.path.join(folder_path, 'inputs.csv'), 'w') as input_file, open(os.path.join(folder_path, 'targets.csv'), 'w', newline='') as target_file:
+    with open(os.path.join(folder_path, 'inputs.csv'), 'w') as input_file, open(os.path.join(folder_path, 'targets.csv'), 'w') as target_file:
 
          csv_input_writer, csv_target_writer = csv.writer(input_file, delimiter=','), csv.writer(target_file)
 
