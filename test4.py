@@ -11,15 +11,13 @@ from keras.layers import Dense, LSTM
 from keras.callbacks import EarlyStopping, ModelCheckpoint
 from sklearn.model_selection import train_test_split
 
-print('a')
-
 class LSTM_model:
-    
+
     def __init__(self, input_shape, output_shape):
         self.input_shape = input_shape
         self.output_shape = output_shape
         self.model = self.build_model()
-    
+
     def build_model(self):
         model = Sequential()
         model.add(LSTM(units=64, input_shape=self.input_shape, return_sequences=True))
@@ -27,7 +25,7 @@ class LSTM_model:
         model.add(Dense(units=self.output_shape, activation='linear'))
         model.compile(loss='mean_squared_error', optimizer='adam')
         return model
-    
+
     def train(self, X_train, y_train, X_test, y_test, num_epochs, batch_size):
         # update with your_path
         save_fname = os.path.join('your_path', '%s-e%s.h5' % (dt.datetime.now().strftime('%d%m%Y-%H%M%S'), str(num_epochs)))
@@ -38,7 +36,7 @@ class LSTM_model:
                              validation_data=(X_test, y_test), callbacks=callbacks)
         self.model.save(save_fname)
         return history
-        
+
     def evaluate(self, X_test, y_test):
         loss = self.model.evaluate(X_test, y_test)
         return loss
@@ -53,32 +51,31 @@ num_line_descr = "1" # specific line description
 
 dataset_folder_path = "LSTM_Dataset_" + num_line_descr
 
-input_sequence = pd.read_csv(os.path.join(dataset_folder_path, 'inputs.csv'), delimiter=',') 
-print(1)
+input_sequence = pd.read_csv(os.path.join(dataset_folder_path, 'inputs.csv'), delimiter=',')
 target_input_sequence = pd.read_csv(os.path.join(dataset_folder_path, 'targets.csv'), delimiter=',')
 
 target_sequence = target_input_sequence['T_pa_in_veh']
 
 num_features = input_sequence.shape[1]
 num_samples = target_sequence.shape[0]
-look_back = m + n + 1
+look_back = m + n
 
 assert (num_samples * 5) == input_sequence.shape[0], "Wrong LSTM Dataset"
 
-X = np.zeros((num_samples, look_back, num_features))
+X = np.zeros((num_samples, look_back+1, num_features))
 y = np.zeros((num_samples, 1))
 
 for i in range(0, input_sequence.shape[0], look_back):
     idx = int(i/look_back)
-    X[idx,:,:] = input_sequence.iloc[i:i+look_back,:]
-    pred_row = target_input_sequence.iloc[idx]
-    pred_row.at[0,'T_pa_in_veh'] = 0
-    X = pd.concat([X,pred_row], ignore_index=True)
+    X[idx,:-1,:] = input_sequence.iloc[i:i+look_back,:]
+    pred_row = np.array(target_input_sequence.iloc[idx,:])
+    pred_row[12] = 0
+    X[idx,-1,:] = pred_row
     y[idx, 0] = target_sequence.iloc[idx].item()
 
     print(X)
     print(y)
-        
+
 # Reshape X to 2D (num_samples, look_back * num_features)
 #X_2d = X.reshape(X.shape[0], -1)
 
@@ -89,7 +86,7 @@ for i in range(0, input_sequence.shape[0], look_back):
 #X_train, X_test, y_train, y_test = train_test_split(X_2d, y_1d, test_size=0.2, random_state=42)
 
 # Define the train-test split ratio
-test_size = 0.2 
+test_size = 0.2
 
 # Calculate the number of samples for testing
 num_test_samples = int(test_size * num_samples)
@@ -108,10 +105,10 @@ y_train = y[train_indices]
 X_test = X[test_indices]
 y_test = y[test_indices]
 
-model = LSTM_model((look_back, num_features), 1)
+model = LSTM_model((look_back+1, num_features), 1)
 
-epochs = 10
-batch_size = 64
+epochs = 20
+batch_size = 128
 
 history = model.train(X_train, y_train, X_test, y_test, epochs, batch_size)
 
@@ -123,10 +120,10 @@ print("Mean, std deviation")
 print("%.2f%% (+/- %.2f%%)" % (np.mean(loss)*100, np.std(loss)*100))
 
 # Plot history
+plt.clf()
 plt.plot(history.history['loss'], label='train_loss')
 plt.plot(history.history['val_loss'], label='val_loss')
 plt.legend()
-plt.show()
 
 directory = './'
 file = directory + str(epochs) + '_' + str(batch_size) + "_0.jpg"
@@ -143,6 +140,7 @@ median_value = np.median(difference)
 mean_value = np.mean(difference)
 
 # Plot difference, mean, median
+plt.clf()
 plt.plot(difference, label='Difference')
 plt.axhline(mean_value, color='r', linestyle='--', label='Difference Mean Value')
 plt.axhline(median_value, color='g', linestyle='--', label='Difference Median')
@@ -152,7 +150,6 @@ plt.legend()
 
 plt.text(0, mean_value, f'Mean: {mean_value: .3f}', color='r', ha='right', va='bottom')
 plt.text(0, median_value, f'Median: {median_value:.3f}', color='g', ha='right', va='top')
-plt.show() 
 
 file = directory + str(epochs) + '_' + str(batch_size) + "_1.jpg"
 with open(file,'w') as f:
@@ -160,14 +157,13 @@ with open(file,'w') as f:
 plt.savefig(file, format='jpg')
 
 # Plot actual vs predicted values
+plt.clf()
 plt.plot(y_test, label='Test Data')
 plt.plot(predictions, label='Predictions')
-
 plt.xlabel('Stop_order')
 plt.ylabel('Ridership')
 plt.legend()
 
-plt.show()
 
 file = directory + str(epochs) + '_' + str(batch_size) + "_2.jpg"
 with open(file,'w') as f:
