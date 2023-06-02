@@ -11,6 +11,8 @@ from keras.layers import Dense, LSTM
 from keras.callbacks import EarlyStopping, ModelCheckpoint
 from sklearn.model_selection import train_test_split
 
+print('a')
+
 class LSTM_model:
     
     def __init__(self, input_shape, output_shape):
@@ -52,11 +54,14 @@ num_line_descr = "1" # specific line description
 dataset_folder_path = "LSTM_Dataset_" + num_line_descr
 
 input_sequence = pd.read_csv(os.path.join(dataset_folder_path, 'inputs.csv'), delimiter=',') 
-target_sequence = pd.read_csv(os.path.join(dataset_folder_path, 'targets.csv'))
+print(1)
+target_input_sequence = pd.read_csv(os.path.join(dataset_folder_path, 'targets.csv'), delimiter=',')
+
+target_sequence = target_input_sequence['T_pa_in_veh']
 
 num_features = input_sequence.shape[1]
 num_samples = target_sequence.shape[0]
-look_back = m + n
+look_back = m + n + 1
 
 assert (num_samples * 5) == input_sequence.shape[0], "Wrong LSTM Dataset"
 
@@ -66,7 +71,13 @@ y = np.zeros((num_samples, 1))
 for i in range(0, input_sequence.shape[0], look_back):
     idx = int(i/look_back)
     X[idx,:,:] = input_sequence.iloc[i:i+look_back,:]
+    pred_row = target_input_sequence.iloc[idx]
+    pred_row.at[0,'T_pa_in_veh'] = 0
+    X = pd.concat([X,pred_row], ignore_index=True)
     y[idx, 0] = target_sequence.iloc[idx].item()
+
+    print(X)
+    print(y)
         
 # Reshape X to 2D (num_samples, look_back * num_features)
 #X_2d = X.reshape(X.shape[0], -1)
@@ -117,6 +128,12 @@ plt.plot(history.history['val_loss'], label='val_loss')
 plt.legend()
 plt.show()
 
+directory = './'
+file = directory + str(epochs) + '_' + str(batch_size) + "_0.jpg"
+with open(file,'w') as f:
+    pass
+plt.savefig(file, format='jpg')
+
 # calculate RMSE
 rmse = sqrt(mean_squared_error(y_test, predictions))
 print('Test RMSE: %.3f' % rmse)
@@ -137,6 +154,11 @@ plt.text(0, mean_value, f'Mean: {mean_value: .3f}', color='r', ha='right', va='b
 plt.text(0, median_value, f'Median: {median_value:.3f}', color='g', ha='right', va='top')
 plt.show() 
 
+file = directory + str(epochs) + '_' + str(batch_size) + "_1.jpg"
+with open(file,'w') as f:
+    pass
+plt.savefig(file, format='jpg')
+
 # Plot actual vs predicted values
 plt.plot(y_test, label='Test Data')
 plt.plot(predictions, label='Predictions')
@@ -146,3 +168,8 @@ plt.ylabel('Ridership')
 plt.legend()
 
 plt.show()
+
+file = directory + str(epochs) + '_' + str(batch_size) + "_2.jpg"
+with open(file,'w') as f:
+    pass
+plt.savefig(file, format='jpg')

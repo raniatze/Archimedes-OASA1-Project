@@ -67,7 +67,7 @@ def create_input_sequences(num_line_descr, line_descr_df, m, n):
 
          # Write header row in output_file
          csv_input_writer.writerow(['Line_descr', 'Direction', 'Stop_id', 'Stop_order', 'Minute_of_day', 'Day_of_month', 'Day_of_week', 'Week_of_year', 'Day_of_year', 'Is_holiday', 'Temperature', 'Precipitation', 'T_pa_in_veh'])
-         csv_target_writer.writerow(['T_pa_in_veh'])
+         csv_target_writer.writerow(['Line_descr', 'Direction', 'Stop_id', 'Stop_order', 'Minute_of_day', 'Day_of_month', 'Day_of_week', 'Week_of_year', 'Day_of_year', 'Is_holiday', 'Temperature', 'Precipitation', 'T_pa_in_veh'])
 
          # Group the data by Day_of_year
          grouped_data = line_descr_df.groupby(['Direction', 'Sched'])
@@ -121,12 +121,13 @@ def create_input_sequences(num_line_descr, line_descr_df, m, n):
                        x = input()
 
                     # Get the target value (T_pa_in_veh) for the current instance
-                    target = group_sorted.iloc[i]['T_pa_in_veh']
+                    target = group_sorted.iloc[i]#['T_pa_in_veh']
+                    target.drop(['Sched', 'Year'], inplace=True)
                     print("Target")
                     print(target)
 
                     csv_input_writer.writerows(inputs.values)
-                    csv_target_writer.writerow([target])
+                    csv_target_writer.writerow(target.values)
             else:
                 continue
     return
