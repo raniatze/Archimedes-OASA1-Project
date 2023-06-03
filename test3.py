@@ -122,6 +122,7 @@ def create_input_sequences(num_line_descr, line_descr_df, m, n):
 
                     # Get the target value (T_pa_in_veh) for the current instance
                     target = group_sorted.iloc[i]#['T_pa_in_veh']
+                    target = pd.DataFrame(target).transpose()
                     target.drop(['Sched', 'Year'], axis=1, inplace=True)
                     print("Target")
                     print(target)
