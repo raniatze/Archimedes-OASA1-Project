@@ -122,12 +122,12 @@ def create_input_sequences(num_line_descr, line_descr_df, m, n):
 
                     # Get the target value (T_pa_in_veh) for the current instance
                     target = group_sorted.iloc[i]#['T_pa_in_veh']
-                    target.drop(['Sched', 'Year'], inplace=True)
+                    target.drop(['Sched', 'Year'], axis=1, inplace=True)
                     print("Target")
                     print(target)
 
                     csv_input_writer.writerows(inputs.values)
-                    csv_target_writer.writerow(target.values)
+                    csv_target_writer.writerows(target.values)
             else:
                 continue
     return
