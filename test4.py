@@ -69,7 +69,7 @@ for i in range(0, input_sequence.shape[0], look_back):
     idx = int(i/look_back)
     X[idx,:-1,:] = input_sequence.iloc[i:i+look_back,:]
     pred_row = np.array(target_input_sequence.iloc[idx,:])
-    pred_row[12] = 0
+    pred_row[12] = -1
     X[idx,-1,:] = pred_row
     y[idx, 0] = target_sequence.iloc[idx].item()
 
