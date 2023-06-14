@@ -25,7 +25,7 @@ class LSTM_model:
         self.model.add(Dense(units=self.output_shape, activation='linear'))
         self.model.compile(loss='mean_squared_error', optimizer='adam')
 
-    def train(self, X_train, y_train, epochs, batch_size, validation_data):
+    def train(self, X_train, y_train, epochs, batch_size, validation_data, num_line_descr):
         
         # Define the directory path for saving the checkpoints
         checkpoint_dir = os.path.join(os.getcwd(), 'Checkpoints', num_line_descr)
@@ -118,7 +118,7 @@ y_test = y[test_indices]
 
 model = LSTM_model((look_back+1, num_features), 1)
 
-history = model.train(X_train, y_train, epochs = 20, batch_size = 128, validation_data=(X_val, y_val))
+history = model.train(X_train, y_train, epochs = 20, batch_size = 128, validation_data=(X_val, y_val), num_line_descr)
 
 # Evaluate the model
 loss = model.evaluate(X_test, y_test)
