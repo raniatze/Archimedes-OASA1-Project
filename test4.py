@@ -50,7 +50,7 @@ class LSTM_model:
 
 m = 3 # previous stops
 n = 2 # previous days
-num_line_descr = "1" # specific line description
+num_line_descr = "0" # specific line description
 
 dataset_folder_path = "LSTM_Dataset_" + num_line_descr
 
@@ -58,7 +58,7 @@ input_sequence = pd.read_csv(os.path.join(dataset_folder_path, 'inputs.csv'), de
 target_input_sequence = pd.read_csv(os.path.join(dataset_folder_path, 'targets.csv'), delimiter=',')
 print(input_sequence.shape)
 print(target_input_sequence.shape)
-x = input()
+#x = input()
 
 target_sequence = target_input_sequence['T_pa_in_veh']
 
@@ -79,8 +79,8 @@ for i in range(0, input_sequence.shape[0], look_back):
     X[idx,-1,:] = pred_row
     y[idx, 0] = target_sequence.iloc[idx].item()
 
-    print(X)
-    print(y)
+    #print(X)
+    #print(y)
 
 # Reshape X to 2D (num_samples, look_back * num_features)
 #X_2d = X.reshape(X.shape[0], -1)
@@ -118,7 +118,9 @@ y_test = y[test_indices]
 
 model = LSTM_model((look_back+1, num_features), 1)
 
-history = model.train(X_train, y_train, epochs = 20, batch_size = 128, validation_data=(X_val, y_val), num_line_descr)
+epochs = 20
+batch_size = 128
+history = model.train(X_train, y_train, epochs = epochs, batch_size = batch_size, validation_data=(X_val, y_val), num_line_descr=num_line_descr)
 
 # Evaluate the model
 loss = model.evaluate(X_test, y_test)
