@@ -10,6 +10,8 @@ from keras.models import Sequential
 from keras.layers import Dense, LSTM
 from keras.callbacks import EarlyStopping, ModelCheckpoint
 from sklearn.model_selection import train_test_split
+from sklearn.model_selection import GridSearchCV, TimeSeriesSplit
+from keras.wrappers.scikit_learn import KerasRegressor
 
 class LSTM_model:
 
