@@ -16,7 +16,7 @@ class LSTM_model:
     def __init__(self, input_shape, output_shape):
         self.input_shape = input_shape
         self.output_shape = output_shape
-        self.model = self.build_model()
+        self.build_model()
 
     def build_model(self):
         self.model = Sequential()
