@@ -50,37 +50,55 @@ class LSTM_model:
 
 m = 3 # previous stops
 n = 2 # previous days
-num_line_descr = "0" # specific line description
-
-dataset_folder_path = "LSTM_Dataset_" + num_line_descr
-
-input_sequence = pd.read_csv(os.path.join(dataset_folder_path, 'inputs.csv'), delimiter=',')
-target_input_sequence = pd.read_csv(os.path.join(dataset_folder_path, 'targets.csv'), delimiter=',')
-print(input_sequence.shape)
-print(target_input_sequence.shape)
-#x = input()
-
-target_sequence = target_input_sequence['T_pa_in_veh']
-
-num_features = input_sequence.shape[1]
-num_samples = target_sequence.shape[0]
 look_back = m + n
 
-assert (num_samples * 5) == input_sequence.shape[0], "Wrong LSTM Dataset"
+category_0 = ['0', '1', '139', '140', '4', '5', '143', '6', '144', '8', '9', '188', '145', '191', '172', '15', '20', '173', '22', '205']
 
-X = np.zeros((num_samples, look_back+1, num_features))
-y = np.zeros((num_samples, 1))
+category_1 = ['2', '217', '10', '12', '16', '18', '174', '193', '33', '39', '194', '58', '68', '70', '225', '90', '92', '179', '113']
 
-for i in range(0, input_sequence.shape[0], look_back):
+category_2 = ['11', '189', '13', '190', '192', '14', '181', '146', '307', '19', '21', '200', '209', '24', '175', '148', '182', '210', '38', '40']
+
+category_3 = ['114', '115', '116', '169', '117', '118', '170', '119', '120', '230', '122', '123', '124', '125', '199', '127', '128', '129', '130']
+
+category_4 = ['171', '17', '49', '50', '152', '65', '74', '82', '196', '107', '108']
+
+category_5 = ['142', '37', '226', '223', '331', '332', '237', '206', '204', '231', '131', '132', '133', '134', '135', '244']
+
+X, y = [], []
+
+category = '0' # CHANGE accordingly
+for num_line_descr in category_0:
+
+  dataset_folder_path = "Category " + category +  "/LSTM_Dataset_" + num_line_descr
+  print(dataset_folder_path)
+
+  input_sequence = pd.read_csv(os.path.join(dataset_folder_path, 'inputs.csv'), delimiter=',')
+  target_input_sequence = pd.read_csv(os.path.join(dataset_folder_path, 'targets.csv'), delimiter=',')
+
+  target_sequence = target_input_sequence['T_pa_in_veh']
+
+  num_features = input_sequence.shape[1]
+  num_samples = target_sequence.shape[0]
+
+  assert (num_samples * 5) == input_sequence.shape[0], "Wrong LSTM Dataset"
+
+  X_line_descr = np.zeros((num_samples, look_back+1, num_features))
+  y_line_descr = np.zeros((num_samples, 1))
+
+  for i in range(0, input_sequence.shape[0], look_back):
+    
     idx = int(i/look_back)
-    X[idx,:-1,:] = input_sequence.iloc[i:i+look_back,:]
+    X_line_descr[idx,:-1,:] = input_sequence.iloc[i:i+look_back,:]
     pred_row = np.array(target_input_sequence.iloc[idx,:])
     pred_row[12] = -1
-    X[idx,-1,:] = pred_row
-    y[idx, 0] = target_sequence.iloc[idx].item()
+    X_line_descr[idx,-1,:] = pred_row
+    y_line_descr[idx, 0] = target_sequence.iloc[idx].item()
+  
+  X.append(X_line_descr)
+  y.append(y_line_descr)
 
-    #print(X)
-    #print(y)
+X = np.concatenate(X, axis=0)
+y = np.vstack(y)
 
 # Reshape X to 2D (num_samples, look_back * num_features)
 #X_2d = X.reshape(X.shape[0], -1)
@@ -120,7 +138,7 @@ model = LSTM_model((look_back+1, num_features), 1)
 
 epochs = 20
 batch_size = 128
-history = model.train(X_train, y_train, epochs = epochs, batch_size = batch_size, validation_data=(X_val, y_val), num_line_descr=num_line_descr)
+history = model.train(X_train, y_train, epochs=epochs, batch_size=batch_size, validation_data=(X_val, y_val), num_line_descr=num_line_descr)
 
 # Evaluate the model
 loss = model.evaluate(X_test, y_test)
