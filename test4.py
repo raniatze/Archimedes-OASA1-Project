@@ -69,7 +69,7 @@ X, y = [], []
 category = '0' # CHANGE accordingly
 for num_line_descr in category_0:
 
-  dataset_folder_path = "Category " + category +  "/LSTM_Dataset_" + num_line_descr
+  dataset_folder_path = "Category_" + category +  "/LSTM_Dataset_" + num_line_descr
   print(dataset_folder_path)
 
   input_sequence = pd.read_csv(os.path.join(dataset_folder_path, 'inputs.csv'), delimiter=',')
