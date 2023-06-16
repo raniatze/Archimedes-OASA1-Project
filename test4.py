@@ -28,7 +28,7 @@ class LSTM_model:
     def train(self, X_train, y_train, epochs, batch_size, validation_data, category):
         
         # Define the directory path for saving the checkpoints
-        checkpoint_dir = os.path.join(os.getcwd(), 'Checkpoints/Category_{category}'.format(category=category))
+        checkpoint_dir = os.path.join(os.getcwd(), 'Checkpoints/Category_{category}_{epochs}_{batch_size}'.format(category=category))
 
         # Create the directory if it doesn't exist
         os.makedirs(checkpoint_dir, exist_ok=True)
