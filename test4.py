@@ -10,6 +10,7 @@ from keras.models import Sequential
 from keras.layers import Dense, LSTM
 from keras.callbacks import EarlyStopping, ModelCheckpoint
 from sklearn.model_selection import train_test_split
+import joblib
 
 class LSTM_model:
 
@@ -67,38 +68,51 @@ category_5 = ['142', '37', '226', '223', '331', '332', '237', '206', '204', '231
 X, y = [], []
 
 category = '4' # CHANGE accordingly
-for num_line_descr in category_4: # CHANGE accordingly
+# File paths
+X_path = 'X_' + category + '.joblib'
+y_path = 'y_' + category + '.joblib'
 
-  dataset_folder_path = "Category_" + category +  "/LSTM_Dataset_" + num_line_descr
-  print(dataset_folder_path)
+# Check if files exist
+if os.path.exists(X_path) and os.path.exists(y_path):
+    # If files exist, load them
+    X = joblib.load(X_path)
+    y = joblib.load(y_path)
+else:
+    for num_line_descr in category_4: # CHANGE accordingly
 
-  input_sequence = pd.read_csv(os.path.join(dataset_folder_path, 'inputs.csv'), delimiter=',')
-  target_input_sequence = pd.read_csv(os.path.join(dataset_folder_path, 'targets.csv'), delimiter=',')
+      dataset_folder_path = "Category_" + category +  "/LSTM_Dataset_" + num_line_descr
+      print(dataset_folder_path)
 
-  target_sequence = target_input_sequence['T_pa_in_veh']
+      input_sequence = pd.read_csv(os.path.join(dataset_folder_path, 'inputs.csv'), delimiter=',')
+      target_input_sequence = pd.read_csv(os.path.join(dataset_folder_path, 'targets.csv'), delimiter=',')
 
-  num_features = input_sequence.shape[1]
-  num_samples = target_sequence.shape[0]
+      target_sequence = target_input_sequence['T_pa_in_veh']
 
-  assert (num_samples * 5) == input_sequence.shape[0], "Wrong LSTM Dataset"
+      num_features = input_sequence.shape[1]
+      num_samples = target_sequence.shape[0]
 
-  X_line_descr = np.zeros((num_samples, look_back+1, num_features))
-  y_line_descr = np.zeros((num_samples, 1))
+      assert (num_samples * 5) == input_sequence.shape[0], "Wrong LSTM Dataset"
 
-  for i in range(0, input_sequence.shape[0], look_back):
-    
-    idx = int(i/look_back)
-    X_line_descr[idx,:-1,:] = input_sequence.iloc[i:i+look_back,:]
-    pred_row = np.array(target_input_sequence.iloc[idx,:])
-    pred_row[12] = -1
-    X_line_descr[idx,-1,:] = pred_row
-    y_line_descr[idx, 0] = target_sequence.iloc[idx].item()
-  
-  X.append(X_line_descr)
-  y.append(y_line_descr)
+      X_line_descr = np.zeros((num_samples, look_back+1, num_features))
+      y_line_descr = np.zeros((num_samples, 1))
 
-X = np.concatenate(X, axis=0)
-y = np.vstack(y)
+      for i in range(0, input_sequence.shape[0], look_back):
+        
+        idx = int(i/look_back)
+        X_line_descr[idx,:-1,:] = input_sequence.iloc[i:i+look_back,:]
+        pred_row = np.array(target_input_sequence.iloc[idx,:])
+        pred_row[12] = -1
+        X_line_descr[idx,-1,:] = pred_row
+        y_line_descr[idx, 0] = target_sequence.iloc[idx].item()
+      
+      X.append(X_line_descr)
+      y.append(y_line_descr)
+
+    X = np.concatenate(X, axis=0)
+    y = np.vstack(y)
+
+    joblib.dump(X, X_path)
+    joblib.dump(y, y_path)
 
 # Reshape X to 2D (num_samples, look_back * num_features)
 #X_2d = X.reshape(X.shape[0], -1)
