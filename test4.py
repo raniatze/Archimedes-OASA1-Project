@@ -138,7 +138,7 @@ y_test = y[test_indices]
 model = LSTM_model((look_back+1, num_features), 1)
 
 epochs = 100
-batch_size = 128
+batch_size = 32
 history = model.train(X_train, y_train, epochs=epochs, batch_size=batch_size, validation_data=(X_val, y_val), category=category)
 
 # Evaluate the model
@@ -149,6 +149,14 @@ print("%.2f%% (+/- %.2f%%)" % (np.mean(loss)*100, np.std(loss)*100))
 # Make predictions
 predictions = model.predict(X_test)
 
+# Define the directory path for saving the plots and rmse values
+plots_dir = os.path.join(os.getcwd(), 'Plots/Category_{category}'.format(category=category))
+rmse_dir = os.path.join(os.getcwd(), 'RMSE/Category_{category}'.format(category=category))
+
+# Create the directory if it doesn't exist
+os.makedirs(plots_dir, exist_ok=True)
+os.makedirs(rmse_dir, exist_ok=True)
+
 # Plot history
 plt.plot(history.history['loss'], label='Training Loss')
 plt.plot(history.history['val_loss'], label='Validation Loss')
@@ -157,12 +165,6 @@ plt.ylabel('Loss')
 plt.legend()
 plt.show()
 
-# Define the directory path for saving the plots
-plots_dir = os.path.join(os.getcwd(), 'Plots/Category_{category}'.format(category=category))
-
-# Create the directory if it doesn't exist
-os.makedirs(plots_dir, exist_ok=True)
-
 file = os.path.join(plots_dir, str(epochs) + '_' + str(batch_size) + "_0.jpg")
 with open(file,'w') as f:
     pass
@@ -170,6 +172,11 @@ plt.savefig(file, format='jpg')
 
 # calculate RMSE
 rmse = sqrt(mean_squared_error(y_test, predictions))
+rounded_rmse = round(rmse, 3)
+
+# Save RMSE to a file
+with open(os.path.join(rmse_dir, 'rmse_{epochs}_{batch_size}.txt'.format(epochs=epochs, batch_size=batch_size)), 'w') as f:
+    f.write("{:.3f}".format(rounded_rmse))
 print('Test RMSE: %.3f' % rmse)
 
 difference= abs(y_test - predictions)
@@ -181,7 +188,7 @@ plt.clf()
 plt.plot(difference, label='Difference')
 plt.axhline(mean_value, color='r', linestyle='--', label='Difference Mean Value')
 plt.axhline(median_value, color='g', linestyle='--', label='Difference Median')
-plt.xlabel('Stop_order')
+plt.xlabel('Test Samples')
 plt.ylabel('Difference')
 plt.legend()
 
@@ -197,7 +204,7 @@ plt.savefig(file, format='jpg')
 plt.clf()
 plt.plot(y_test, label='Test Data')
 plt.plot(predictions, label='Predictions')
-plt.xlabel('Stop_order')
+plt.xlabel('Test Samples')
 plt.ylabel('Ridership')
 plt.legend()
 
