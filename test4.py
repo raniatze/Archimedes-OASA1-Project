@@ -28,7 +28,7 @@ class LSTM_model:
     def train(self, X_train, y_train, epochs, batch_size, validation_data, category):
         
         # Define the directory path for saving the checkpoints
-        checkpoint_dir = os.path.join(os.getcwd(), 'Checkpoints/Category_{category}_{epochs}_{batch_size}'.format(category=category))
+        checkpoint_dir = os.path.join(os.getcwd(), 'Checkpoints/Category_{category}_{epochs}_{batch_size}'.format(category=category, epochs=epochs, batch_size=batch_size))
 
         # Create the directory if it doesn't exist
         os.makedirs(checkpoint_dir, exist_ok=True)
@@ -162,7 +162,7 @@ plots_dir = os.path.join(os.getcwd(), 'Plots/Category_{category}'.format(categor
 # Create the directory if it doesn't exist
 os.makedirs(plots_dir, exist_ok=True)
 
-file = plots_dir + str(epochs) + '_' + str(batch_size) + "_0.jpg"
+file = os.path.join(plots_dir, str(epochs) + '_' + str(batch_size) + "_0.jpg")
 with open(file,'w') as f:
     pass
 plt.savefig(file, format='jpg')
@@ -187,7 +187,7 @@ plt.legend()
 plt.text(0, mean_value, f'Mean: {mean_value: .3f}', color='r', ha='right', va='bottom')
 plt.text(0, median_value, f'Median: {median_value:.3f}', color='g', ha='right', va='top')
 
-file = plots_dir + str(epochs) + '_' + str(batch_size) + "_1.jpg"
+file = os.path.join(plots_dir, str(epochs) + '_' + str(batch_size) + "_1.jpg")
 with open(file,'w') as f:
     pass
 plt.savefig(file, format='jpg')
@@ -201,7 +201,7 @@ plt.ylabel('Ridership')
 plt.legend()
 
 
-file = plots_dir + str(epochs) + '_' + str(batch_size) + "_2.jpg"
+file = os.path.join(plots_dir, str(epochs) + '_' + str(batch_size) + "_2.jpg")
 with open(file,'w') as f:
     pass
 plt.savefig(file, format='jpg')
