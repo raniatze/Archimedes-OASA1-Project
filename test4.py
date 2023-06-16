@@ -119,6 +119,7 @@ num_test_samples = int(test_size * num_samples)
 
 # Shuffle the data indices
 indices = np.arange(num_samples)
+np.random.seed(0)
 np.random.shuffle(indices)
 
 # Split the indices into train, validation, and test sets
