@@ -33,7 +33,7 @@ class LSTM_model:
         self.model = KerasRegressor(build_fn=self.build_model, verbose=0)
         
         # Define the directory path for saving the checkpoints
-        checkpoint_dir = os.path.join(os.getcwd(), 'Checkpoints/Category_', category)
+        checkpoint_dir = os.path.join(os.getcwd(), 'Checkpoints/Category_{category}'.format(category=category))
 
         # Create the directory if it doesn't exist
         os.makedirs(checkpoint_dir)
@@ -172,7 +172,7 @@ plt.legend()
 plt.show()
 
 # Define the directory path for saving the plots
-plots_dir = os.path.join(os.getcwd(), 'Plots/Category_', category)
+plots_dir = os.path.join(os.getcwd(), 'Plots/Category_{category}'.format(category=category))
 
 # Create the directory if it doesn't exist
 os.makedirs(plots_dir)
