@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 import datetime as dt
 from math import sqrt
+from joblib import dump, load
 from matplotlib import pyplot as plt
 from sklearn.metrics import mean_squared_error
 from keras.models import Sequential
@@ -32,18 +33,6 @@ class LSTM_model:
     
         self.model = KerasRegressor(build_fn=self.build_model, verbose=0)
         
-        # Define the directory path for saving the checkpoints
-        checkpoint_dir = os.path.join(os.getcwd(), 'Checkpoints/Category_{category}'.format(category=category))
-
-        # Create the directory if it doesn't exist
-        os.makedirs(checkpoint_dir, exist_ok=True)
-
-        # Define the callbacks
-        callbacks = [
-            EarlyStopping(monitor='val_loss', patience=10),
-            ModelCheckpoint(os.path.join(checkpoint_dir, 'model_checkpoint_{epoch:02d}.h5'), save_freq='epoch', save_best_only=False)
-        ]
-        
         # Define the parameter grid
         params = {
     		'units': [32, 64, 128],
@@ -53,12 +42,14 @@ class LSTM_model:
         }
 
         # Perform grid search with callbacks
-        grid = GridSearchCV(estimator=self.model, param_grid=params, cv=3)
-        grid_result = grid.fit(X_train, y_train, callbacks=callbacks)
-        self.model = grid_result.best_estimator_.model_
-
-        # Save the training history
-        history = grid_result.best_estimator_.model_.history.history
+        grid_search = GridSearchCV(estimator=self.model, param_grid=params, refit=True, cv=3)
+        grid_search.fit(X_train, y_train)
+        
+        # Access the best model and its training history
+        self.model = grid_search.best_estimator_
+        history = self.model.history.history
+        
+        dump(self.model, "best_model.joblib")
     
         return history
 
