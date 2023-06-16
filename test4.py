@@ -25,10 +25,10 @@ class LSTM_model:
         self.model.add(Dense(units=self.output_shape, activation='linear'))
         self.model.compile(loss='mean_squared_error', optimizer='adam')
 
-    def train(self, X_train, y_train, epochs, batch_size, validation_data, num_line_descr):
+    def train(self, X_train, y_train, epochs, batch_size, validation_data, category):
         
         # Define the directory path for saving the checkpoints
-        checkpoint_dir = os.path.join(os.getcwd(), 'Checkpoints', num_line_descr)
+        checkpoint_dir = os.path.join(os.getcwd(), 'Checkpoints/Category_', category)
 
         # Create the directory if it doesn't exist
         os.makedirs(checkpoint_dir)
@@ -66,8 +66,8 @@ category_5 = ['142', '37', '226', '223', '331', '332', '237', '206', '204', '231
 
 X, y = [], []
 
-category = '0' # CHANGE accordingly
-for num_line_descr in category_0:
+category = '4' # CHANGE accordingly
+for num_line_descr in category_4: # CHANGE accordingly
 
   dataset_folder_path = "Category_" + category +  "/LSTM_Dataset_" + num_line_descr
   print(dataset_folder_path)
@@ -136,9 +136,9 @@ y_test = y[test_indices]
 
 model = LSTM_model((look_back+1, num_features), 1)
 
-epochs = 20
+epochs = 100
 batch_size = 128
-history = model.train(X_train, y_train, epochs=epochs, batch_size=batch_size, validation_data=(X_val, y_val), num_line_descr=num_line_descr)
+history = model.train(X_train, y_train, epochs=epochs, batch_size=batch_size, validation_data=(X_val, y_val), category=category)
 
 # Evaluate the model
 loss = model.evaluate(X_test, y_test)
@@ -156,8 +156,13 @@ plt.ylabel('Loss')
 plt.legend()
 plt.show()
 
-directory = './'
-file = directory + str(epochs) + '_' + str(batch_size) + "_0.jpg"
+# Define the directory path for saving the plots
+plots_dir = os.path.join(os.getcwd(), 'Plots/Category_', category)
+
+# Create the directory if it doesn't exist
+os.makedirs(plots_dir)
+
+file = plots_dir + str(epochs) + '_' + str(batch_size) + "_0.jpg"
 with open(file,'w') as f:
     pass
 plt.savefig(file, format='jpg')
@@ -182,7 +187,7 @@ plt.legend()
 plt.text(0, mean_value, f'Mean: {mean_value: .3f}', color='r', ha='right', va='bottom')
 plt.text(0, median_value, f'Median: {median_value:.3f}', color='g', ha='right', va='top')
 
-file = directory + str(epochs) + '_' + str(batch_size) + "_1.jpg"
+file = plots_dir + str(epochs) + '_' + str(batch_size) + "_1.jpg"
 with open(file,'w') as f:
     pass
 plt.savefig(file, format='jpg')
@@ -196,7 +201,7 @@ plt.ylabel('Ridership')
 plt.legend()
 
 
-file = directory + str(epochs) + '_' + str(batch_size) + "_2.jpg"
+file = plots_dir + str(epochs) + '_' + str(batch_size) + "_2.jpg"
 with open(file,'w') as f:
     pass
 plt.savefig(file, format='jpg')
