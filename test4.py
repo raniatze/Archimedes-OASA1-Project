@@ -31,7 +31,7 @@ class LSTM_model:
         checkpoint_dir = os.path.join(os.getcwd(), 'Checkpoints/Category_{category}'.format(category=category))
 
         # Create the directory if it doesn't exist
-        os.makedirs(checkpoint_dir)
+        os.makedirs(checkpoint_dir, exist_ok=True)
     
         checkpoint_callback = ModelCheckpoint(os.path.join(checkpoint_dir, 'model_checkpoint_{epoch:02d}.h5'), save_freq='epoch', save_best_only=False)
         early_stopping_callback = EarlyStopping(monitor='val_loss', patience=10)
@@ -160,7 +160,7 @@ plt.show()
 plots_dir = os.path.join(os.getcwd(), 'Plots/Category_{category}'.format(category=category))
 
 # Create the directory if it doesn't exist
-os.makedirs(plots_dir)
+os.makedirs(plots_dir, exist_ok=True)
 
 file = plots_dir + str(epochs) + '_' + str(batch_size) + "_0.jpg"
 with open(file,'w') as f:
