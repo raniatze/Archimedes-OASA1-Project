@@ -31,7 +31,7 @@ class LSTM_model:
         checkpoint_dir = os.path.join(os.getcwd(), 'Checkpoints/Category_{category}_{epochs}_{batch_size}'.format(category=category, epochs=epochs, batch_size=batch_size))
 
         # Create the directory if it doesn't exist
-        os.makedirs(checkpoint_dir, exist_ok=True)
+        os.makedirs(checkpoint_dir)
     
         checkpoint_callback = ModelCheckpoint(os.path.join(checkpoint_dir, 'best_model.h5'), monitor='val_loss', mode='min', save_best_only=True)
         early_stopping_callback = EarlyStopping(monitor='val_loss', patience=10)
