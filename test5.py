@@ -46,12 +46,26 @@ class LSTM_model:
         grid_search.fit(X_train, y_train)
         
         # Access the best model and its training history
-        self.model = grid_search.best_estimator_
-        history = self.model.history.history
+        best_model = grid_search.best_estimator_
+        best_params = grid_search.best_params_
+        best_history = best_model.history.history
         
-        dump(self.model, "best_model.joblib")
+        self.model = best_model
+        
+        # Define the directory path for saving the best trained models and their parameters after GridSearchCV
+        best_model_dir = os.path.join(os.getcwd(), 'Best_Models/Category_{category}'.format(category=category))
+        
+        # Create the directory if it doesn't exist
+        os.makedirs(best_model_dir)
+
+        # Save the best parameters to a file
+        with open(os.path.join(best_model_dir, 'best_params.txt'), 'w') as f:
+          for param, value in best_params.items():
+            f.write(f'{param}: {value}\n')
+                
+        dump(self.model, os.path.join(best_model_dir, "best_model.joblib"))
     
-        return history
+        return best_history
 
     def evaluate(self, X_test, y_test):
         loss = self.model.evaluate(X_test, y_test)
