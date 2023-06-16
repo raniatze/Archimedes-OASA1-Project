@@ -42,7 +42,7 @@ class LSTM_model:
         }
 
         # Perform grid search with callbacks
-        grid_search = GridSearchCV(estimator=self.model, param_grid=params, refit=True, cv=3)
+        grid_search = GridSearchCV(estimator=self.model, param_grid=params, refit=True, cv=3, verbose=1)
         grid_search.fit(X_train, y_train)
         
         # Access the best model and its training history
