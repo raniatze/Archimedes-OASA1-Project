@@ -69,7 +69,7 @@ for doc in result:
     stop_id = stops_data_dict[stop_encoding]
     line_descr = lines_data_dict[line_encoding]
     
-    query = db.stops.find({"stop_id": stop_id}, {"stop_descr": 1})
+    query = db.staseis_dimoi.find({"stop_id": stop_id}, {"stop_descr": 1})
     for doc in query:
       stop_descr = doc["stop_descr"]
       
