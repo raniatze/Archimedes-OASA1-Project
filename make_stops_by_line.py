@@ -55,7 +55,7 @@ pipeline = [
 ]
 
 # Create an empty DataFrame
-df = pd.DataFrame(columns=['Line_descr', 'Line_encoding', 'Direction', 'Stop_id', 'Stop_encoding', 'Stop_order', 'Stop_name'])
+df = pd.DataFrame(columns=['Line_descr', 'Line_encoding', 'Direction', 'Stop_id', 'Stop_encoding', 'Stop_order', 'Stop_descr'])
 
 # Perform the aggregation query
 result = db.ake.aggregate(pipeline)
@@ -69,12 +69,12 @@ for doc in result:
     stop_id = stops_data_dict[stop_encoding]
     line_descr = lines_data_dict[line_encoding]
     
-    query = db.stops.find({"stop_id": stop_id}, {"stop_name": 1})
+    query = db.stops.find({"stop_id": stop_id}, {"stop_descr": 1})
     for doc in query:
-      stop_name = doc["stop_name"]
+      stop_descr = doc["stop_descr"]
       
     # Create a new row to append to the DataFrame
-    new_row = pd.DataFrame({'Line_descr': [line_descr], 'Line_encoding': [line_encoding], 'Direction': [direction], 'Stop_id': [stop_id], 'Stop_encoding': [stop_encoding], 'Stop_order': [stop_order], 'Stop_name': [stop_name]})
+    new_row = pd.DataFrame({'Line_descr': [line_descr], 'Line_encoding': [line_encoding], 'Direction': [direction], 'Stop_id': [stop_id], 'Stop_encoding': [stop_encoding], 'Stop_order': [stop_order], 'Stop_descr': [stop_descr]})
     
     # Append the new row to the DataFrame
     df = pd.concat([df, new_row], ignore_index=True)
