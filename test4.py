@@ -113,6 +113,12 @@ else:
 
     joblib.dump(X, X_path)
     joblib.dump(y, y_path)
+    
+num_features = X.shape[2]
+num_samples = y.shape[0]
+print(num_features)
+print(num_samples)
+x = input()    
 
 # Reshape X to 2D (num_samples, look_back * num_features)
 #X_2d = X.reshape(X.shape[0], -1)
