@@ -177,7 +177,6 @@ plt.plot(history.history['val_loss'], label='Validation Loss')
 plt.xlabel('Epoch')
 plt.ylabel('Loss')
 plt.legend()
-plt.show()
 
 file = os.path.join(plots_dir, str(epochs) + '_' + str(batch_size) + "_0.jpg")
 with open(file,'w') as f:
