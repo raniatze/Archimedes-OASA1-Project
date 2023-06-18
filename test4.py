@@ -92,19 +92,26 @@ else:
       num_samples = target_sequence.shape[0]
 
       assert (num_samples * 5) == input_sequence.shape[0], "Wrong LSTM Dataset"
-
-      X_line_descr = np.zeros((num_samples, look_back+1, num_features))
-      y_line_descr = np.zeros((num_samples, 1))
-
+      
+      X_line_descr_list = []
+      y_line_descr_list = []
+      threshold = 300
+    
       for i in range(0, input_sequence.shape[0], look_back):
         
-        idx = int(i/look_back)
-        X_line_descr[idx,:-1,:] = input_sequence.iloc[i:i+look_back,:]
+        idx = i // look_back
+        
+        if (input_sequence.iloc[i:i+look_back, -1] > threshold).any() or target_sequence.iloc[idx].item() > threshold:
+            continue
+    
         pred_row = np.array(target_input_sequence.iloc[idx,:])
         pred_row[12] = -1
-        X_line_descr[idx,-1,:] = pred_row
-        y_line_descr[idx, 0] = target_sequence.iloc[idx].item()
-      
+        all_rows = np.concatenate([input_sequence.iloc[i:i+look_back, :].values.reshape(1, look_back, num_features), pred_row.reshape(1, 1, num_features)], axis=1) # (1,6,13)
+        X_line_descr_list.append(all_rows)
+        y_line_descr_list.append(target_sequence.iloc[idx].item())
+    
+      X_line_descr = np.concatenate(X_line_descr_list)
+      y_line_descr = np.array(y_line_descr_list).reshape(-1,1)
       X.append(X_line_descr)
       y.append(y_line_descr)
 
@@ -113,10 +120,10 @@ else:
 
     joblib.dump(X, X_path)
     joblib.dump(y, y_path)
-    
+
 num_features = X.shape[2]
 num_samples = y.shape[0]
- 
+    
 # Reshape X to 2D (num_samples, look_back * num_features)
 #X_2d = X.reshape(X.shape[0], -1)
 
@@ -155,7 +162,7 @@ y_test = y[test_indices]
 model = LSTM_model((look_back+1, num_features), 1)
 
 epochs = 100
-batch_size = 32
+batch_size = 128
 history = model.train(X_train, y_train, epochs=epochs, batch_size=batch_size, validation_data=(X_val, y_val), category=category)
 
 # Evaluate the model
