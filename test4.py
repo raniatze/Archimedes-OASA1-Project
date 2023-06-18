@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 import datetime as dt
 from math import sqrt
+import matplotlib.ticker as ticker
 from matplotlib import pyplot as plt
 from sklearn.metrics import mean_squared_error
 from keras.models import Sequential
@@ -35,7 +36,7 @@ class LSTM_model:
         os.makedirs(checkpoint_dir)
     
         checkpoint_callback = ModelCheckpoint(os.path.join(checkpoint_dir, 'best_model.h5'), monitor='val_loss', mode='min', save_best_only=True)
-        early_stopping_callback = EarlyStopping(monitor='val_loss', patience=10)
+        early_stopping_callback = EarlyStopping(monitor='val_loss', patience=20)
 
         history = self.model.fit(X_train, y_train, epochs=epochs, batch_size=batch_size, verbose=1,
                              validation_data=validation_data, callbacks=[checkpoint_callback, early_stopping_callback])
@@ -162,7 +163,7 @@ y_test = y[test_indices]
 model = LSTM_model((look_back+1, num_features), 1)
 
 epochs = 100
-batch_size = 128
+batch_size = 256
 history = model.train(X_train, y_train, epochs=epochs, batch_size=batch_size, validation_data=(X_val, y_val), category=category)
 
 # Evaluate the model
@@ -209,14 +210,17 @@ mean_value = np.mean(difference)
 # Plot difference, mean, median
 plt.clf()
 plt.plot(difference, label='Difference')
-plt.axhline(mean_value, color='r', linestyle='--', label='Difference Mean Value')
-plt.axhline(median_value, color='g', linestyle='--', label='Difference Median')
+plt.axhline(mean_value, color='r', linestyle='--', label='Mean Value')
+plt.axhline(median_value, color='g', linestyle='--', label='Median')
+formatter = ticker.ScalarFormatter(useMathText=True)
+formatter.set_powerlimits((-1, 1))  # Set the power limits for formatting
+plt.gca().xaxis.set_major_formatter(formatter)
 plt.xlabel('Test Samples')
 plt.ylabel('Difference')
 plt.legend()
-
 plt.text(0, mean_value, f'Mean: {mean_value: .3f}', color='r', ha='right', va='bottom')
 plt.text(0, median_value, f'Median: {median_value:.3f}', color='g', ha='right', va='top')
+#plt.margins(0)
 
 file = os.path.join(plots_dir, str(epochs) + '_' + str(batch_size) + "_1.jpg")
 with open(file,'w') as f:
@@ -227,9 +231,13 @@ plt.savefig(file, format='jpg')
 plt.clf()
 plt.plot(y_test, label='Test Data')
 plt.plot(predictions, label='Predictions')
+formatter = ticker.ScalarFormatter(useMathText=True)
+formatter.set_powerlimits((-1, 1))  # Set the power limits for formatting
+plt.gca().xaxis.set_major_formatter(formatter)
 plt.xlabel('Test Samples')
 plt.ylabel('Ridership')
 plt.legend()
+#plt.margins(0)
 
 
 file = os.path.join(plots_dir, str(epochs) + '_' + str(batch_size) + "_2.jpg")
