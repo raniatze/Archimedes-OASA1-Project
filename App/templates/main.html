@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OASA</title>
+    <style>
+        body {
+            background-color: rgb(182, 244, 223);
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+            position: relative;
+            bottom: 30vh;
+            left: 40vh;
+        }
+
+        #image-container {
+            position: absolute;
+            top: 10;
+            left: 10;
+        }
+
+        #image-container img {
+            width: 200px;  /* Adjust the width as desired */
+            height: auto;  /* Maintain the aspect ratio */
+        }
+
+        .container {
+            display: flex;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="image-container">
+        <img src="{{ url_for('static', filename='Transport_for_athens_oasa_logo_01.svg.png') }}" alt="Image">
+    </div>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

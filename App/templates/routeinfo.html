@@ -1,0 +1,15 @@
+{% extends "main.html" %}
+
+{% block content %}
+    <div class="container">
+        <form action="{{ url_for('rinfo') }}" method="POST">
+            <h2>Επίλεξε ποια στάση από τη γραμμή {{ selected_option }}</h2>
+            <label for="stop-dropdown">Διάλεξε:</label>
+            <select id="stop-dropdown" name="stop-dropdown">
+                {% for stop in stops %}
+                <option value="{{ stop }}">{{ stop }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Ψάξε">
+    </div>
+{% endblock %}
