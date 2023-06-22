@@ -6,7 +6,7 @@ import numpy as np
 
 app = Flask(__name__)
 
-ld = pd.read_csv('/home/alex/Documents/Archimedes-OASA1-Project/landmarks.csv')
+ld = pd.read_csv('../landmarks.csv')
 
 client = pymongo.MongoClient("mongodb://localhost:27017/")
 db = client['OASA1']
@@ -23,7 +23,14 @@ def load_page():
     #if request.method == 'POST':
     #   return redirect(url_for('rinfo'))
     
-    return redirect(url_for('form'))
+    #return redirect(url_for('form'))
+    return redirect(url_for('home'))
+
+@app.route('/home', methods=['GET', 'POST'])
+def home():
+    if request.method == 'POST':
+        return redirect(url_for('dir'))
+    return render_template('home.html', choices=choices)
 
 @app.route('/form', methods=['GET', 'POST'])
 def form():

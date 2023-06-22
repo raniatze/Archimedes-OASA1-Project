@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OASA</title>
+    <style>
+        body {
+            background-color: rgb(182, 214, 244);
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+            position: relative;
+            bottom: 30vh;
+            left: 40vh;
+        }
+
+        #image-container {
+            position: absolute;
+            top: 10;
+            left: 10;
+        }
+
+        #image-container img {
+            width: 200px;  /* Adjust the width as desired */
+            height: auto;  /* Maintain the aspect ratio */
+        }
+
+        .container {
+            display: flex;
+            height: 100%;
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            top: 10vh;
+            left: 20vh;
+
+        }
+
+        .form-group {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            position: relative;
+        }
+        .text-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            text-align: center;
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: #ffffff; /* Set the background color of the footer */
+            color: #010000; /* Set the font color to white */
+            text-align: center;
+            padding: 20px 0; /* Adjust the padding value as needed */
+        }
+
+    </style>
+</head>
+<body>
+    <div id="image-container">
+        <a href="{{ url_for('load_page') }}">
+            <img src="{{ url_for('static', filename='Transport_for_athens_oasa_logo_01.svg.png') }}" alt="Image">
+        </a>
+    </div>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+        <footer class="footer">
+            <p>Στα πλαίσια υλοποίησης του έργου 'Μονάδα ΑΡΧΙΜΗΔΗΣ: Έρευνα στην Τεχνητή Νοημοσύνη, την Επιστήμη δεδομένων και τους Αλγόριθμους', </p>
+                <p>αναπτύξαμε μια εφαρμογή για πρόβλεψη πληρότητας των οχημάτων στόλου του Ο.Α.Σ.Α. </p>
+        </footer>
+        
