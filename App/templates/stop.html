@@ -1,0 +1,17 @@
+{% extends "main.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="form-container">
+            <form>
+                <div class="form-group">
+                    <p>Your bus {{ selected_option }}  arrives at the stop: </p>
+                    <p>: {{ selected_stop }} with 0 seats!</p>
+                </div>
+                <div id="map-container" style="width: 500px; height: 300px; align-items: center; right: 20vh;">
+                    {{ map|safe }}
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

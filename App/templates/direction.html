@@ -1,0 +1,18 @@
+{% extends "main.html" %}
+
+{% block content %}
+<center>
+    <div class="container">
+        <form action="{{ url_for('rinfo') }}" method="POST">
+            <h2>Επίλεξε την κατεύθυνση από το δρομολόγιο {{ selected_option}} </h2>
+            <label for="dropdown1">Διάλεξε:</label>
+            <select id="dropdown1" name="dropdown1">
+                {% for choice in choices %}
+                <option value="{{ choice }}">{{ choice }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Ψάξε">
+        </form>
+    </div>
+</center>
+{% endblock %}
