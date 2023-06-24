@@ -26,4 +26,3 @@ python3 inserter.py -f vehicle_capacities.csv -c vehicle_capacities -s ','
 python3 addHeaders.py
 python3 process_ake.py
 python3 insert_ake.py
-
