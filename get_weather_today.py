@@ -2,7 +2,20 @@ import csv
 import json
 import requests
 import subprocess
+from pymongo import MongoClient
 from datetime import date, datetime
+
+# Connect to MongoDB
+client = MongoClient('mongodb://localhost:27017/')  # Replace with your MongoDB connection details
+
+# Access the database
+db = client['OASA1']  # Replace with your database name
+
+# Drop the collection
+db['weather_today'].drop()
+
+# Close the connection
+client.close()
 
 def get_data(lat, long):
     url = "https://api.open-meteo.com/v1/forecast?"
