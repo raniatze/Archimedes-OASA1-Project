@@ -100,13 +100,13 @@ If you wish to train the machine learning model yourself, follow these steps:
 
 1. Prepare your AKE data as shown above.
 
-2. Prepare this data for training. You can change the number of previous stops and days by changing the **m** and **n** parameters. Also you must specify the line for which you prepeare the data by changing the **num_line_descr** value. This is done so you don't have to process it all at once.
+2. Prepare this data for training. You can change the number of previous stops and days by changing the **m** and **n** parameters. Also, you must specify the line encoding that corresponds to the bus line for which you want to train the model by changing the **line_encoding** value. This is done so you don't have to process it all at once.
 
 ```bash
 python3 prepare_model_dataset.py
 ```
 
-3. Train your model. Be sure to match **m**, **n** parameters with your data preparation. Also you can change the model, batch_size and number of epochs.
+3. Train your model. Be sure that the values of the **m**, **n** parameters match those from the previous step. Also, you can change the model, batch_size and number of epochs.
 
 ```bash
 python3 train_model.py
