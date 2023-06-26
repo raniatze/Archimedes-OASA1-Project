@@ -81,5 +81,5 @@ def process_files(directory):
             writer.writerow(row)
 
 if __name__ == '__main__':
-    directory = '/home/raniatze/AKE/'#input('Enter the directory path to search for .csv files: ')
+    directory = './AKE/' # input('Enter the directory path to search for .csv files: ')
     process_files(directory)
