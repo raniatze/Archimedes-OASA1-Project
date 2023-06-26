@@ -88,6 +88,6 @@ def process_files(directory):
     print("#stop_ids: ", len(stop_ids))
 
 if __name__ == '__main__':
-    directory = '/home/raniatze/AKE/'#input('Enter the directory path to search for .txt files: ')
+    directory = './AKE/' # input('Enter the directory path to search for .txt files: ')
     process_files(directory)
 
