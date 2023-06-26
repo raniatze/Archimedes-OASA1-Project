@@ -62,14 +62,14 @@ python3 app.py
 
 If you have your own AKE data like the file in Data/ake_sample.csv to make predictions you need to prepare it as shown below:
 
-1. Assuming your data is in a.zip file, unzip it into a folder called AKE:
+1. Assuming your data is in an AKE.zip file, unzip it like this:
 
 ```bash
 cd Archimedes-OASA1-Project
 unzip AKE.zip
 ```
 
-2. If your file doesn't have headers run:
+2. If your data doesn't have headers, run:
 
 ```bash
 python3 addHeaders.py
