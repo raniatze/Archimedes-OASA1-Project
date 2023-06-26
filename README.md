@@ -1,7 +1,7 @@
 # RideInsight 
 
 ## Introduction
-Within the context of the project "**Data for Social Good**" that was done in collaboration between the Hellenic Corporation of Assets and Participations (HCAP) and Archimedes Research Unit, we built a prototype tool-application that solves the problem of predicting the occupancy of a public mode of transport (trolleybus or bus). This prediction is critical for better transportation planning and optimization. By identifying the factors that influence occupancy, we developed algorithms and prediction models, which can help in better and more efficient route planning, as well as correctly informing the traveling public about the occupancy of the means of transportation they use.
+Within the context of the project "**Data for Social Good**" that was done in collaboration between the Hellenic Corporation of Assets and Participations (HCAP) and Archimedes Research Unit, we built a prototype tool-application that solves the problem of predicting the occupancy of a public mode of transport (trolleybus or bus). This prediction is critical for better transportation planning and optimization. By identifying the factors that influence occupancy, we developed algorithms and prediction models, which can help in better and more efficient route planning, as well as correctly informing the traveling public about the occupancy of the means of transport they use.
 
 ## Prerequisites
 
