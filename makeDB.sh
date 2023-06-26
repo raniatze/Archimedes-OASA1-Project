@@ -22,7 +22,3 @@ python3 inserter.py -f stops_by_line.csv -c stops_by_line  -s ','
 python3 inserter.py -f stops.csv -c stops -s ','
 
 python3 inserter.py -f vehicle_capacities.csv -c vehicle_capacities -s ','
-
-python3 addHeaders.py
-python3 process_ake.py
-python3 insert_ake.py
