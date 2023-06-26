@@ -60,7 +60,7 @@ python3 app.py
 
 ## Processing your AKE data
 
-If you have your own AKE data, such as the file in Data/ake_sample.csv, you must prepare it as described below:
+If you have your own AKE data, such as the file in Data/ake_sample.csv, you must process it as described below:
 
 1. Assuming your data is in an AKE.zip file, unzip it like this:
 
