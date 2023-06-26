@@ -45,7 +45,7 @@ def get_data(lat, long):
 csv_out = "weathers.csv"
 
 def main():
-    path = "dimoi.csv"
+    path = "./Data/dimoi.csv"
 
     dimoi = []
     with open(path, newline='', encoding='utf-8') as csvfile:
