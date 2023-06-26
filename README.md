@@ -58,7 +58,7 @@ cd App/
 python3 app.py
 ```
 
-## Preparing your AKE data for predictions
+## Processing your AKE data
 
 If you have your own AKE data, such as the file in Data/ake_sample.csv, you must prepare it as described below:
 
@@ -98,7 +98,7 @@ python3 insertAKE.py
 
 If you wish to train the machine learning model yourself, follow these steps:
 
-1. Prepare your AKE data as shown above.
+1. Process your AKE data as shown above.
 
 2. Prepare this data for training. You can change the number of previous stops and days by changing the **m** and **n** parameters. Also, you must specify the line encoding that corresponds to the bus line for which you want to train the model by changing the **line_encoding** value. This is done so you don't have to process it all at once.
 
@@ -106,7 +106,7 @@ If you wish to train the machine learning model yourself, follow these steps:
 python3 prepare_model_dataset.py
 ```
 
-3. Train your model. Be sure that the values of the **m**, **n** parameters match those from the previous step. Also, you can change the model, batch_size and number of epochs.
+3. Train your model. Check that the **m**, **n** parameters have the same values as in the previous step. Also, you can change the model, batch_size and number of epochs.
 
 ```bash
 python3 train_model.py
