@@ -1,8 +1,5 @@
 #! /bin/bash
 
-python3 get_weather.py
-python3 inserter.py -f weathers.csv -c weather -s ','
-
 python3 inserter.py -f dimoi.csv -c dimoi -s ','
 
 python3 inserter.py -f staseis_dimoi.csv -c staseis_dimoi  -s ','
