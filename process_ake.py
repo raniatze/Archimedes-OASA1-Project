@@ -16,7 +16,7 @@ import fcntl
 
 num_processors = 6
 
-directory = '/home/raniatze/AKE/2021/2021/10/' #2021/2021/04/2021-04-14_akedata/' #input('Enter the directory path to search for .csv files: ')
+directory = './AKE/' # input('Enter the directory path to search for .csv files: ')
 
 # Set up the connection to the MongoDB server
 client = pymongo.MongoClient('mongodb://localhost:27017/')
