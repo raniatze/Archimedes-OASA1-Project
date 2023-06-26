@@ -72,6 +72,7 @@ python3 addHeaders.py
 
 ```bash
 python3 get_weather.py
+python3 inserter.py -f weathers.csv -c weather -s ','
 ```
 
 3. Process and enhance your AKE data with:
