@@ -36,6 +36,7 @@ pip install -r requirements.txt
 4. Create the starting database with all necessary data, except the AKE data.
 
 ```bash
+cd Data/
 sh makeDB.sh
 ```
 
