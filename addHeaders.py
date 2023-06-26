@@ -38,6 +38,6 @@ def process_files(directory):
         process_file(file, 'Line_descr;Rtype;Direction;Sched;S_order;Vehicle_no;Arrival_datetime;Stop_id;Stop_descr;Stop_metric;T_pas_in;T_pas_out;T_pa_in_veh')
 
 if __name__ == '__main__':
-    directory = '/home/raniatze/AKE/' #input('Enter the directory path to search for .txt files: ')
+    directory = './AKE/' # input('Enter the directory path to search for .txt files: ')
     process_files(directory)
 
