@@ -60,7 +60,7 @@ python3 app.py
 
 ## Preparing your AKE data for predictions
 
-If you have your own AKE data like the file in Data/ake_sample.csv to make predictions you need to prepare it as show below:
+If you have your own AKE data like the file in Data/ake_sample.csv to make predictions you need to prepare it as shown below:
 
 1. If your file doesn't have headers run:
 
