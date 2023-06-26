@@ -46,10 +46,11 @@ To run **RideInsight**, follow these steps, if you have the historical AKE data 
 1. Get the weather for the day:
 
 ```bash
-python3 get_weather_today
+python3 get_weather_today.py
 ```
 
-2. Run the application:
+
+3. Run the application:
 
 ```bash
 cd App/
@@ -88,7 +89,7 @@ python3 insertAKE.py
 
 If you wish to train the machine learning model yourself, follow these steps:
 
-1. Prepare your AKE data as show above.
+1. Prepare your AKE data as shown above.
 
 2. Prepare this data for training. You can change the number of previous stops and days by changing the **m** and **n** parameters. Also you must specify the line for which you prepeare the data by changing the **num_line_descr** value. This is done so you don't have to process it all at once.
 
