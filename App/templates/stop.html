@@ -6,7 +6,7 @@
             <form>
                 <div class="form-group">
                     <p>Your bus {{ selected_option }}  arrives at the stop: </p>
-                    <p>: {{ selected_stop }} with 0 seats!</p>
+		    <p>: {{ selected_stop }} with {{ passengers }} passengers!</p>
                 </div>
                 <div id="map-container" style="width: 500px; height: 300px; align-items: center; right: 20vh;">
                     {{ map|safe }}
