@@ -56,9 +56,9 @@ def get_previous_days(n, index, df, stops_dict):
 
     return result_df
 
-def create_input_sequences(num_line_descr, line_descr_df, m, n):
+def create_input_sequences(line_encoding, line_descr_df, m, n):
 
-    folder_path = 'LSTM_Dataset_' + num_line_descr
+    folder_path = 'LSTM_Dataset_' + line_encoding
     os.makedirs(folder_path)
 
     with open(os.path.join(folder_path, 'inputs.csv'), 'w') as input_file, open(os.path.join(folder_path, 'targets.csv'), 'w') as target_file:
@@ -133,12 +133,12 @@ def create_input_sequences(num_line_descr, line_descr_df, m, n):
                 continue
     return
 
-def filter_line_descr(line_descr):
+def filter_line_descr(line_encoding):
     # Find the matching documents
     pipeline = [
         {
             "$match": {
-                "Line_descr": line_descr
+                "Line_descr": line_encoding
             }
         }
     ]
@@ -150,9 +150,9 @@ def filter_line_descr(line_descr):
 # Example usage
 m = 3 # previous stop_orders
 n = 2 # previous days
-num_line_descr = "1"
+line_encoding = "1"
 
-filtered_data = filter_line_descr(num_line_descr)
+filtered_data = filter_line_descr(line_encoding)
 line_descr_df = pd.DataFrame(filtered_data)
 line_descr_df.drop(['_id'], axis=1, inplace=True)
 line_descr_df['Stop_id'] = line_descr_df['Stop_id'].astype(int)
@@ -162,4 +162,4 @@ line_descr_df['Minute_of_day'] = line_descr_df['Minute_of_day'].astype(int)
 line_descr_df['T_pa_in_veh'] = line_descr_df['T_pa_in_veh'].astype(int)
 line_descr_df['Year'] = line_descr_df['Year'].astype(int)
 
-create_input_sequences(num_line_descr, line_descr_df, m, n)
+create_input_sequences(line_encoding, line_descr_df, m, n)
