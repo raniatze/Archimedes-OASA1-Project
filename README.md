@@ -49,6 +49,11 @@ To run **RideInsight**, follow these steps, if you have the historical AKE data 
 python3 get_weather_today.py
 ```
 
+2. Get the predictions for the day:
+
+```bash
+python3 make_predictions.py
+```
 
 3. Run the application:
 
@@ -74,20 +79,20 @@ unzip AKE.zip
 python3 addHeaders.py
 ```
 
-2. Get historical weather data. Be sure to specify the correct time period in the code:
+3. Get historical weather data. Be sure to specify the correct time period in the code:
 
 ```bash
 python3 get_weather.py
 python3 inserter.py -f weathers.csv -c weather -s ','
 ```
 
-3. Process and enhance your AKE data with:
+4. Process and enhance your AKE data with:
 
 ```bash
 python3 process_ake.py
 ```
 
-4. Insert your enhanced AKE data into your database:
+5. Insert your enhanced AKE data into your database:
 
 ```bash
 python3 insertAKE.py
