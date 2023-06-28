@@ -1,12 +1,19 @@
 {% extends "main.html" %}
 
 {% block content %}
+<center>
     <div class="container">
         <div class="form-container">
             <form>
                 <div class="form-group">
-                    <p>Your bus {{ selected_option }}  arrives at the stop: </p>
-		    <p>: {{ selected_stop }} with {{ passengers }} passengers!</p>
+                    <p>Το λεωφορείο <b>{{ selected_option }}</b> έρχεται στη στάση  </p>
+                    <p> <b>{{ selected_stop }} </b> με περίπου <b> {{ final_result }}</b> επιβάτες!</p>
+                    {% if access %} 
+                        <p> Η στάση {{selected_stop}} έχει προεξοχή για ΑμεΑ.</p>
+                    {% else %} 
+                        <p> Η στάση {{selected_stop}}  δεν έχει προεξοχή για AμεΑ.</p>
+                    {% endif %}
+
                 </div>
                 <div id="map-container" style="width: 500px; height: 300px; align-items: center; right: 20vh;">
                     {{ map|safe }}
@@ -14,4 +21,5 @@
             </form>
         </div>
     </div>
+</center>
 {% endblock %}
